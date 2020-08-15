@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MovingSphere : MonoBehaviour {
 
@@ -51,6 +52,8 @@ public class MovingSphere : MonoBehaviour {
 
 	int stepsSinceLastGrounded, stepsSinceLastJump;
 
+	private bool needsStraightened = false;
+
 	void OnValidate () {
 		minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
 		minStairsDotProduct = Mathf.Cos(maxStairsAngle * Mathf.Deg2Rad);
@@ -67,7 +70,7 @@ public class MovingSphere : MonoBehaviour {
 		playerInput.x = Input.GetAxis("Horizontal");
 		playerInput.y = Input.GetAxis("Vertical");
 		playerInput = Vector2.ClampMagnitude(playerInput, 1f);
-
+		
 		if (playerInputSpace) {
 			rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
 			forwardAxis =
@@ -97,6 +100,15 @@ public class MovingSphere : MonoBehaviour {
 
 		body.velocity = velocity;
 		ClearState();
+		
+		if (Math.Abs(velocity.x) < .2)
+		{
+			needsStraightened = false;
+		}
+		else
+		{
+			needsStraightened = true;
+		}
 	}
 
 	void ClearState () {
@@ -185,8 +197,8 @@ public class MovingSphere : MonoBehaviour {
 			Mathf.MoveTowards(currentZ, desiredVelocity.z, maxSpeedChange);
 
 		velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
-		// Jed: Adding this so that any character will be standing straight, instead of free rotating
-		StandUpStraight();
+		
+		if(needsStraightened) StandUpStraight();
 	}
 
 	void Jump (Vector3 gravity) {
