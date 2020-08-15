@@ -121,6 +121,10 @@ public class MovingSphere : MonoBehaviour {
 			contactNormal = upAxis;
 		}
 	}
+	private void StandUpStraight()
+	{
+		transform.rotation = Quaternion.LookRotation(contactNormal);
+	}
 
 	bool SnapToGround () {
 		if (stepsSinceLastGrounded > 1 || stepsSinceLastJump <= 2) {
@@ -181,6 +185,8 @@ public class MovingSphere : MonoBehaviour {
 			Mathf.MoveTowards(currentZ, desiredVelocity.z, maxSpeedChange);
 
 		velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
+		// Jed: Adding this so that any character will be standing straight, instead of free rotating
+		StandUpStraight();
 	}
 
 	void Jump (Vector3 gravity) {
