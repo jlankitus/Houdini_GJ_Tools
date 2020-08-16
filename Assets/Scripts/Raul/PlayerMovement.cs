@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public GameObject Planet;
     public GameObject PlayerPlaceholder;
@@ -16,13 +16,12 @@ public class Player : MonoBehaviour
 
 
     float gravity = 100;
-    bool OnGround = false;
-
 
     float distanceToGround;
     Vector3 Groundnormal;
-    
+
     private Rigidbody rb;
+    private GroundChecker groundChecker;
 
     private float rotation = 0f;
     private float movement = 0f;
@@ -33,6 +32,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        groundChecker = GetComponent<GroundChecker>();
     }
 
     public void OnMovement(InputValue input)
@@ -52,32 +52,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         // Local Rotation
         transform.Rotate(0, RotationSpeed * rotation * Time.deltaTime, 0);
 
         //MOVEMENT
         transform.Translate(0, 0, movement);
         
-
         //GroundControl
 
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
         {
-
             distanceToGround = hit.distance;
             Groundnormal = hit.normal;
-
-            if (distanceToGround <= 0.2f)
-            {
-                OnGround = true;
-            }
-            else
-            {
-                OnGround = false;
-            }
-            
         }
 
 
@@ -85,10 +73,9 @@ public class Player : MonoBehaviour
 
         Vector3 gravDirection = (transform.position - Planet.transform.position).normalized;
 
-        if (OnGround == false)
+        if (!groundChecker.onGround)
         {
             rb.AddForce(gravDirection * -gravity);
-
         }
 
         //
@@ -101,30 +88,5 @@ public class Player : MonoBehaviour
     }
 
 
-    //CHANGE PLANET
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.transform != Planet.transform)
-        {
-            // Switch current Gravity effector to new Planet
-            Planet = collision.transform.gameObject;
-
-            // Adjust gravity Direction
-            Vector3 gravDirection = (transform.position - Planet.transform.position).normalized;
-
-            // Calculate and apply rotation
-            Quaternion toRotation = Quaternion.FromToRotation(transform.up, gravDirection) * transform.rotation;
-            transform.rotation = toRotation;
-
-            // Reset current Velocity
-            rb.velocity = Vector3.zero;
-            // Apply new Gravity force
-            rb.AddForce(gravDirection * gravity);
-            
-            PlayerPlaceholder.GetComponent<PlayerPlaceholder>().NewPlanet(Planet);
-
-        }
-    }
+    
 }
-
