@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovingSphere : MonoBehaviour {
 
@@ -40,7 +41,9 @@ public class MovingSphere : MonoBehaviour {
 
 	Vector3 contactNormal, steepNormal;
 
-	int groundContactCount, steepContactCount;
+    Vector2 playerInput = new Vector2();
+
+    int groundContactCount, steepContactCount;
 
 	bool OnGround => groundContactCount > 0;
 
@@ -65,11 +68,26 @@ public class MovingSphere : MonoBehaviour {
 		OnValidate();
 	}
 
+    public void OnMovement(InputValue input)
+    {
+        playerInput = (Vector2)input.Get();
+    }
+
+    public void OnJump(InputValue input)
+    {
+        if (input.isPressed)
+            desiredJump = true;
+    }
+    
 	void Update () {
-		Vector2 playerInput;
-		playerInput.x = Input.GetAxis("Horizontal");
+        // Handled on OnMovement
+        /*
+        playerInput.x = Input.GetAxis("Horizontal");
 		playerInput.y = Input.GetAxis("Vertical");
+        
 		playerInput = Vector2.ClampMagnitude(playerInput, 1f);
+        */
+
 		
 		if (playerInputSpace) {
 			rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
@@ -82,9 +100,10 @@ public class MovingSphere : MonoBehaviour {
 		}
 		desiredVelocity =
 			new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
-		
-		desiredJump |= Input.GetButtonDown("Jump");
-	}
+
+        // Handled on OnJump
+        // desiredJump |= Input.GetButtonDown("Jump");
+    }
 
 	void FixedUpdate () {
 		Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
@@ -109,7 +128,9 @@ public class MovingSphere : MonoBehaviour {
 		{
 			needsStraightened = true;
 		}
-	}
+
+        // playerInput = new Vector2();
+    }
 
 	void ClearState () {
 		groundContactCount = steepContactCount = 0;
