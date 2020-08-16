@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TutorialCamera : MonoBehaviour
 {
@@ -13,24 +14,31 @@ public class TutorialCamera : MonoBehaviour
     float maxFov = 100;
 
 
+    public void OnCameraZoom(InputValue input)
+    {
+        // Get Input
+        float zoomDirection = input.Get<float>();
+
+        // Fetch current FieldOfView
+        float fov = Camera.main.fieldOfView;
+        // Add value to current Field of View
+        fov += zoomDirection * -sensitivity;
+        // Clamp accordingly
+        fov = Mathf.Clamp(fov, minFov, maxFov);
+        // Apply FoV
+        Camera.main.fieldOfView = fov;
+    }
+
     // Update is called once per frame
     void Update()
     {
 
+        // ToDo: Adjust for new Input System
         if (Input.GetMouseButton(1))
         {
-
             transform.RotateAround(target.transform.position, transform.up, Input.GetAxis("Mouse X") * xSpeed);
             transform.RotateAround(target.transform.position, transform.right, -Input.GetAxis("Mouse Y") * xSpeed);
-
         }
-
-        //ZOOM
-
-        float fov = Camera.main.fieldOfView;
-        fov += Input.GetAxis("Mouse ScrollWheel") * -sensitivity;
-        fov = Mathf.Clamp(fov, minFov, maxFov);
-        Camera.main.fieldOfView = fov;
-
+        
     }
 }
