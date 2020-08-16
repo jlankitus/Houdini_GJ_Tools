@@ -9,6 +9,10 @@ public class CameraSwitcher : MonoBehaviour
     [SerializeField] private OrbitCamera orbitCamera;
     [SerializeField] private Camera godModeCam;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private GameObject world;
+    
+    public float horizontalSpeed = 2.0F;
+    public float verticalSpeed = 2.0F;
 
     private bool god = false;
 
@@ -40,6 +44,14 @@ public class CameraSwitcher : MonoBehaviour
                 SwitchToPlayer();
                 god = false;
             }
+        }
+
+        if (god)
+        {
+            // THIS IS BAD, NOT WORKING AT ALL
+            float h = horizontalSpeed * Input.GetAxis("Mouse X");
+            float v = verticalSpeed * Input.GetAxis("Mouse Y");
+            world.transform.Rotate(v, h, 0);
         }
     }
 }
