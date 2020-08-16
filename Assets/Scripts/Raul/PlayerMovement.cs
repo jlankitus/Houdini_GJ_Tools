@@ -80,7 +80,11 @@ public class PlayerMovement : MonoBehaviour
     {
         // Smooth Position Movement
         transform.position = Vector3.Lerp(transform.position, transform.position, 0.1f);
-        Vector3 gravDirection = (transform.position - activePlanet.transform.position).normalized;
+        Vector3 gravDirection = Vector3.zero;
+        if (activePlanet != null)
+            gravDirection = (transform.position - activePlanet.transform.position).normalized;
+        else
+            gravDirection = (transform.position).normalized;
 
         // Smooth Rotation Movement
         Quaternion toRotation = Quaternion.FromToRotation(transform.up, gravDirection) * transform.rotation;

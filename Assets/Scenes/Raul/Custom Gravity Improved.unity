@@ -245,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423123831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2364931, y: 38.65, z: 0.13497114}
+  m_LocalPosition: {x: 62, y: 348, z: 0.13497114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 517221656}
@@ -266,8 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fedd0b5905557384a9a710d1fa795b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 0}
-  PlayerPlaceholder: {fileID: 0}
+  activePlanet: {fileID: 0}
   speed: 4
   JumpHeight: 1.2
   RotationSpeed: 90
@@ -732,6 +731,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1030838004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030838002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f6c26a63d660d4bb0c1a83bdc0c610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attractionForce: 10
 --- !u!1 &1181592622
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onGround: 0
+  distanceToGround: 0
+  groundNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &1752990552
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,17 +918,17 @@ PrefabInstance:
     - target: {fileID: 2968384233065949691, guid: df7150ed8dc4c9b4485ab9223dd54e26,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2968384233065949691, guid: df7150ed8dc4c9b4485ab9223dd54e26,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2968384233065949691, guid: df7150ed8dc4c9b4485ab9223dd54e26,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7250964607777447737, guid: df7150ed8dc4c9b4485ab9223dd54e26,
         type: 3}
