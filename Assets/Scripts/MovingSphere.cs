@@ -87,8 +87,7 @@ public class MovingSphere : MonoBehaviour {
         
 		playerInput = Vector2.ClampMagnitude(playerInput, 1f);
         */
-
-		
+        
 		if (playerInputSpace) {
 			rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
 			forwardAxis =
