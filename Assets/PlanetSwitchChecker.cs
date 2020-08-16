@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMovement))]
 public class PlanetSwitchChecker : MonoBehaviour
 {
     public GameObject PlanetPrefab;
 
     private Rigidbody rigidbody;
     private Rigidbody planetRigidbody;
-    private GameObject playerPlaceholder;
+    private PlayerMovement playerMovement;
+    private GameObject player;
 
-    private void Start()
+    private void OnEnable()
     {
+        player = transform.parent.gameObject;
         rigidbody = GetComponent<Rigidbody>();
         planetRigidbody = PlanetPrefab.GetComponent<Rigidbody>();
-        playerPlaceholder = transform.parent.gameObject;
+        playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -38,7 +41,8 @@ public class PlanetSwitchChecker : MonoBehaviour
                 // Apply new Gravity force
                 rigidbody.AddForce(gravDirection * planetRigidbody.mass);
 
-                playerPlaceholder.GetComponent<PlayerPlaceholder>().NewPlanet(PlanetPrefab);
+                // Change Planet reference
+                playerMovement.ChangePlanetTo(PlanetPrefab);
             }
         }
     }

@@ -3,36 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(GroundChecker))]
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject Planet;
-    public GameObject PlayerPlaceholder;
+    [HideInInspector] public GameObject activePlanet;
 
     public float speed = 4;
     public float JumpHeight = 1.2f;
     public float RotationSpeed = 90f;
 
     private Rigidbody rigidbody;
-
-
+    
     float gravity = 100;
 
-    float distanceToGround;
-    Vector3 Groundnormal;
-
-    private Rigidbody rb;
     private GroundChecker groundChecker;
 
     private float rotation = 0f;
     private float movement = 0f;
 
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
-        groundChecker = GetComponent<GroundChecker>();
+        rigidbody = GetComponent<Rigidbody>();
+        rigidbody.freezeRotation = true;
+        groundChecker = GetComponentInChildren<GroundChecker>();
     }
 
     public void OnMovement(InputValue input)
@@ -45,48 +39,58 @@ public class PlayerMovement : MonoBehaviour
     {
         if (input.isPressed)
         {
-            rb.AddForce(transform.up * 40000 * JumpHeight * Time.deltaTime);
+            rigidbody.AddForce(transform.up * 40000 * JumpHeight * Time.deltaTime);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // Local Rotation
         transform.Rotate(0, RotationSpeed * rotation * Time.deltaTime, 0);
 
-        //MOVEMENT
+        // Player Movement
+        // rigidbody.velocity = new Vector3(0, 0, movement);
         transform.Translate(0, 0, movement);
         
         //GroundControl
+        
+        // ApplyGravity();
+        AdjustRotation();
+        
+        SmoothMovementAndRotation();
+    }
 
-        RaycastHit hit = new RaycastHit();
-        if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
-        {
-            distanceToGround = hit.distance;
-            Groundnormal = hit.normal;
-        }
-
-
-        //GRAVITY and ROTATION
-
-        Vector3 gravDirection = (transform.position - Planet.transform.position).normalized;
-
+    private void ApplyGravity()
+    {
+        Vector3 gravDirection = (transform.position - activePlanet.transform.position).normalized;
         if (!groundChecker.onGround)
         {
-            rb.AddForce(gravDirection * -gravity);
+            rigidbody.AddForce(gravDirection * -gravity);
         }
+    }
 
-        //
-
-        Quaternion toRotation = Quaternion.FromToRotation(transform.up, Groundnormal) * transform.rotation;
+    private void AdjustRotation()
+    {
+        Quaternion toRotation = Quaternion.FromToRotation(transform.up, groundChecker.groundNormal) * transform.rotation;
         transform.rotation = toRotation;
+    }
 
+    private void SmoothMovementAndRotation()
+    {
+        // Smooth Position Movement
+        transform.position = Vector3.Lerp(transform.position, transform.position, 0.1f);
+        Vector3 gravDirection = (transform.position - activePlanet.transform.position).normalized;
 
-
+        // Smooth Rotation Movement
+        Quaternion toRotation = Quaternion.FromToRotation(transform.up, gravDirection) * transform.rotation;
+        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, 0.1f);
     }
 
 
-    
+    public void ChangePlanetTo(GameObject newPlanet)
+    {
+        activePlanet = newPlanet;
+    }
+
 }

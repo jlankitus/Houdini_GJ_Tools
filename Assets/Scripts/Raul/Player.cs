@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
             // Apply new Gravity force
             rb.AddForce(gravDirection * gravity);
             
-            PlayerPlaceholder.GetComponent<PlayerPlaceholder>().NewPlanet(Planet);
+            PlayerPlaceholder.GetComponent<PlayerMovement>().ChangePlanetTo(Planet);
 
         }
     }

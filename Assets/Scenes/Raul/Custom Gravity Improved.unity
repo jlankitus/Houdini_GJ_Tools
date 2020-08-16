@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 423123833}
   - component: {fileID: 423123832}
   - component: {fileID: 423123840}
-  - component: {fileID: 423123839}
   - component: {fileID: 423123838}
   m_Layer: 0
   m_Name: Player
@@ -264,27 +263,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 423123831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f910997779adf7479e1a71fc75924b3, type: 3}
+  m_Script: {fileID: 11500000, guid: fedd0b5905557384a9a710d1fa795b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 423123831}
-  Planet: {fileID: 1030838002}
---- !u!114 &423123839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423123831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4679209bcbd46db46b84aa4c8129396b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Planet: {fileID: 1030838002}
-  PlayerPlaceholder: {fileID: 423123831}
-  speed: 5.5
-  JumpHeight: 2
+  Planet: {fileID: 0}
+  PlayerPlaceholder: {fileID: 0}
+  speed: 4
+  JumpHeight: 1.2
   RotationSpeed: 90
 --- !u!114 &423123840
 MonoBehaviour:
@@ -757,6 +742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181592623}
   - component: {fileID: 1181592624}
+  - component: {fileID: 1181592625}
   m_Layer: 0
   m_Name: GroundChecker
   m_TagString: Untagged
@@ -786,11 +772,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181592622}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.39778167, z: 0.8}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &1181592625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181592622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91f95a4df3e21e41856e6709cda8ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
 --- !u!1 &1752990552
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9071fdf9546a24f940726f4f4bc64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlanetPrefab: {fileID: 1030838002}
 --- !u!1001 &7785190299189825338
 PrefabInstance:
   m_ObjectHideFlags: 0
