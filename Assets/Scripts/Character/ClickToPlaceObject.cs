@@ -1,27 +1,65 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class ClickToPlaceObject : MonoBehaviour
 {
-    [SerializeField] private GameObject placeableObjectPrefab;
-    [SerializeField] private GameObject currentPlaceableObject;
-    [SerializeField] private KeyCode newObjectHotKey = KeyCode.A;
+    [SerializeField]
+    private GameObject placeableObjectPrefab;
+
+    [SerializeField]
+    private KeyCode newObjectHotkey = KeyCode.A;
+
+    private GameObject currentPlaceableObject;
 
     private float mouseWheelRotation;
-    
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        HandleNewObjectHotKey();
+        HandleNewObjectHotkey();
 
         if (currentPlaceableObject != null)
         {
-            MovePlaceableObjectToMouse();
+            MoveCurrentObjectToMouse();
             RotateFromMouseWheel();
             ReleaseIfClicked();
         }
+    }
+
+    private void HandleNewObjectHotkey()
+    {
+        if (Input.GetKeyDown(newObjectHotkey))
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            else
+            {
+                currentPlaceableObject = Instantiate(placeableObjectPrefab);
+            }
+        }
+    }
+
+    private void MoveCurrentObjectToMouse()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            currentPlaceableObject.transform.position = hitInfo.point;
+            currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+        }
+    }
+
+    private void RotateFromMouseWheel()
+    {
+        Debug.Log(Input.mouseScrollDelta);
+        mouseWheelRotation += Input.mouseScrollDelta.y;
+        currentPlaceableObject.transform.Rotate(Vector3.up, mouseWheelRotation * 10f);
     }
 
     private void ReleaseIfClicked()
@@ -29,42 +67,6 @@ public class ClickToPlaceObject : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             currentPlaceableObject = null;
-        }
-    }
-
-    private void RotateFromMouseWheel()
-    {
-        mouseWheelRotation = Input.mouseScrollDelta.y;
-        Debug.LogError("wheel: "  + Input.mouseScrollDelta.y);
-        currentPlaceableObject.transform.Rotate(Vector3.up, mouseWheelRotation * 10f);
-    }
-
-    private void MovePlaceableObjectToMouse()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(ray, out hitInfo))
-        {
-            currentPlaceableObject.transform.position = hitInfo.point;
-            // Might need to get our world up, not vector3.up
-            currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
-        }
-        
-    }
-
-    private void HandleNewObjectHotKey()
-    {
-        if (Input.GetKeyDown(newObjectHotKey))
-        {
-            if (currentPlaceableObject == null)
-            {
-                currentPlaceableObject = Instantiate(placeableObjectPrefab);
-            }
-            else
-            {
-                Destroy(currentPlaceableObject);
-            }
         }
     }
 }
