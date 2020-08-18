@@ -38,6 +38,7 @@ public class GravityCtrl : MonoBehaviour
             transform.up = Vector3.Lerp(localUp, gravityUp, RotationSpeed * Time.deltaTime);
 
             // Push down for Gravity value
+            // Rb.velocity += -gravityUp * Gravity.Gravity * Rb.mass * Time.deltaTime;
             Rb.AddForce((-gravityUp * Gravity.Gravity) * Rb.mass);
         }
     }
