@@ -35,31 +35,12 @@ public class ThirdPersonMovement : MonoBehaviour
             // Calculate character rotation based on Camera and WASD Movement
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.localEulerAngles.y;
             float smoothedAngle = Mathf.SmoothDampAngle(GFXTransform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, smoothedAngle, 0);
 
-            // float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+            Vector3 moveDir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+            // Unknown if this will behave as expected.
+            rigidbody.MovePosition(transform.position + direction * moveSpeed * Time.deltaTime);
 
-
-            // Fake Character rotation by rotating ONLY the Graphics object inside ^^"
-            // GFXTransform.forward = Vector3.forward * targetAngle;
-            //if (transform.eulerAngles.x > 180 || transform.eulerAngles.y > 180 || transform.eulerAngles.z > 180)
-            //    GFXTransform.localEulerAngles = new Vector3(0, targetAngle + transform.eulerAngles.y, 0);
-            //else
-            //    GFXTransform.localEulerAngles = new Vector3(0, targetAngle - transform.eulerAngles.y, 0);
-
-            // Move the Parent the desired direction, with some movement dampening
-
-            // Vector3 moveDirection = Quaternion.Euler(0, targetAngle, 0) * transform.eulerAngles;
-
-
-            //rigidbody.velocity += (moveDirection.normalized * speed * Time.deltaTime);
-            //rigidbody.AddForce(moveDirection.normalized * speed);
-
-            /*
-            Vector3 relativePos = direction - transform.position;
-            a = relativePos;
-            //Vector3 moveDirection = Quaternion.FromToRotation(transform.eulerAngles, direction);
-            rigidbody.AddRelativeForce(direction * speed);
-            */
         }
     }
 
