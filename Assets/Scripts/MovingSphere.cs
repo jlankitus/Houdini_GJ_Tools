@@ -153,24 +153,47 @@ public class MovingSphere : MonoBehaviour {
 			contactNormal = upAxis;
 		}
 	}
-	private void StandUpStraight()
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        //Gizmos.DrawLine(transform.position, targetDirection * 50);
+        Gizmos.DrawLine(transform.position, contactNormal);
+        //Gizmos.DrawLine(transform.position, playerInput);
+        //Vector3 yRotation = contactNormal * playerInput.y;
+
+        Gizmos.color = Color.green;
+        Vector3 yRotation = transform.position + velocity;
+        Gizmos.DrawLine(transform.position, yRotation);
+        //Gizmos.DrawLine(transform.position, velocity);
+        //Gizmos.DrawLine(transform.position, transform.position + velocity);
+        // Gizmos.DrawLine(new Vector3(0, 0, 0), transform.position);
+    }
+
+    Vector3 myContactNormal;
+
+    private void StandUpStraight()
 	{
-		Debug.LogError("contact normal: " + contactNormal);
-		Debug.LogError("velocity: " + velocity);
-		var targetDirection = contactNormal;
-		// targetDirection.z = velocity.z;
-		
-		var velocityDirection = Quaternion.LookRotation(velocity);
+
+        Debug.Log("contact normal: " + contactNormal);
+		Debug.Log("velocity: " + velocity);
+        Vector3 moveDirection = new Vector3(playerInput.x, 0, playerInput.y);
+
+
+        var targetDirection = contactNormal;
+        
+        Vector3 yRotation = transform.position + velocity;
+        yRotation += contactNormal;
+        
+        transform.forward = yRotation.normalized;
+        //transform.up = contactNormal;
+        
+
+        var velocityDirection = Quaternion.LookRotation(velocity);
 		var velocityVector = velocityDirection.eulerAngles;
-
-		var normalDirection = Quaternion.LookRotation(targetDirection);
-
-		Vector3 normalVector = normalDirection.eulerAngles;
-		Debug.LogError("normal v: " + normalVector);
-		transform.rotation = new Quaternion(normalDirection.x, normalDirection.y, normalDirection.z, normalDirection.w);
-		Debug.LogError("rot q " + transform.rotation);
-		//Debug.LogError(velocityVector.z);
-		transform.rotation = velocityDirection;
+        
+		Debug.Log("rot q " + transform.rotation);
+		
 	}
 
 	bool SnapToGround () {
