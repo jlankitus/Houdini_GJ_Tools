@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    private CharacterController controller;
+    private Rigidbody rigidbody;
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     public Transform cameraTransform;
@@ -15,10 +15,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>(); 
+        rigidbody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -28,15 +28,16 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
+            // Calculate character rotation based on Camera and WASD Movement
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
-            //float smoothedAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            Debug.Log(transform.rotation);
-            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-            //GFXTransform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-            Debug.Log(targetAngle);
-
-            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDirection.normalized * speed * Time.deltaTime);
+            float smoothedAngle = Mathf.SmoothDampAngle(GFXTransform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            
+            // Fake Character rotation by rotating ONLY the Graphics object inside ^^"
+            GFXTransform.rotation = Quaternion.Euler(0, smoothedAngle, 0);
+            
+            // Move the Parent the desired direction, with some movement dampening
+            Vector3 moveDirection = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + targetAngle, transform.eulerAngles.z) * Vector3.forward;
+            rigidbody.velocity += (moveDirection.normalized * speed * Time.deltaTime);
         }
     }
 }

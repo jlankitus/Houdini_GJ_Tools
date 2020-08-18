@@ -24,10 +24,11 @@ public class GravityHandler : MonoBehaviour
     {
         if (gravityForce.magnitude >= 0.1f)
         {
-            
-            Vector3 adjustedGravity = new Vector3(gravityForce.x + offset.x, gravityForce.y + offset.y, gravityForce.z + offset.z);
-            Quaternion rotation = Quaternion.LookRotation(gravityForce);
-            transform.rotation = rotation;
+            Vector3 gravityDirection = gravityForce.normalized;
+            Vector3 adjustedGravity = new Vector3(gravityDirection.x + offset.x, gravityDirection.y + offset.y, gravityDirection.z + offset.z);
+            Quaternion rotation = Quaternion.LookRotation(gravityDirection);
+            //transform.rotation = rotation;
+            transform.up = gravityDirection;
 
             Vector3 moveDirection = rotation * -Vector3.forward;
             controller.Move(moveDirection.normalized * gravityForce.magnitude * Time.deltaTime);
