@@ -155,7 +155,22 @@ public class MovingSphere : MonoBehaviour {
 	}
 	private void StandUpStraight()
 	{
-		transform.rotation = Quaternion.LookRotation(contactNormal);
+		Debug.LogError("contact normal: " + contactNormal);
+		Debug.LogError("velocity: " + velocity);
+		var targetDirection = contactNormal;
+		// targetDirection.z = velocity.z;
+		
+		var velocityDirection = Quaternion.LookRotation(velocity);
+		var velocityVector = velocityDirection.eulerAngles;
+
+		var normalDirection = Quaternion.LookRotation(targetDirection);
+
+		Vector3 normalVector = normalDirection.eulerAngles;
+		Debug.LogError("normal v: " + normalVector);
+		transform.rotation = new Quaternion(normalDirection.x, normalDirection.y, normalDirection.z, normalDirection.w);
+		Debug.LogError("rot q " + transform.rotation);
+		//Debug.LogError(velocityVector.z);
+		transform.rotation = velocityDirection;
 	}
 
 	bool SnapToGround () {
