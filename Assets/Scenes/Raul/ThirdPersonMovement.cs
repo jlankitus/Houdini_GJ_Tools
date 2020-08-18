@@ -9,6 +9,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     public Transform cameraTransform;
+    public Transform GFXTransform;
 
     float turnSmoothVelocity;
 
@@ -28,9 +29,11 @@ public class ThirdPersonMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
-            float smoothedAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-
-            transform.rotation = Quaternion.Euler(0f, smoothedAngle, 0f);
+            //float smoothedAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            Debug.Log(transform.rotation);
+            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+            //GFXTransform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+            Debug.Log(targetAngle);
 
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDirection.normalized * speed * Time.deltaTime);

@@ -217,8 +217,12 @@ public class MovingSphere : MonoBehaviour {
 			Mathf.MoveTowards(currentZ, desiredVelocity.z, maxSpeedChange);
 
 		velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
-		
-		if(needsStraightened) StandUpStraight();
+
+        float targetAngle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
+        //float smoothedAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+
+        if (needsStraightened) StandUpStraight();
 	}
 
 	void Jump (Vector3 gravity) {
