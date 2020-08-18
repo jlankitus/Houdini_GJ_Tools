@@ -13,14 +13,16 @@ public class Attractor : MonoBehaviour
 
     private void ApplyGravity(GameObject other)
     {
-        Rigidbody rigidbody = other.GetComponent<Rigidbody>();
+        GravityHandler gravHandler = other.GetComponent<GravityHandler>();
 
         // Ignore if object has no Rigidbody
-        if (rigidbody == null)
+        if (gravHandler == null)
             return;
 
         Vector3 gravDirection = (other.transform.position - transform.position).normalized;
+        float gravAngle = Vector3.Angle(transform.position, other.transform.position);
 
-        rigidbody.AddForce(gravDirection * - attractionForce);
+        gravHandler.SetGravityVector(gravDirection * attractionForce);
+
     }
 }

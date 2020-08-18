@@ -12,8 +12,7 @@ public class TutorialCamera : MonoBehaviour
 
     float minFov = 35;
     float maxFov = 100;
-
-
+    
     public void OnCameraZoom(InputValue input)
     {
         // Get Input
@@ -27,6 +26,11 @@ public class TutorialCamera : MonoBehaviour
         fov = Mathf.Clamp(fov, minFov, maxFov);
         // Apply FoV
         Camera.main.fieldOfView = fov;
+    }
+
+    public void OnCameraMove(InputValue input)
+    {
+
     }
 
     // Update is called once per frame
