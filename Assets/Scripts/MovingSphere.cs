@@ -218,9 +218,10 @@ public class MovingSphere : MonoBehaviour {
 
 		velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
 
-        float targetAngle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
+        // float targetAngle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
+        //transform.forward = contactNormal - transform.local;
         //float smoothedAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-        transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+        // transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
         if (needsStraightened) StandUpStraight();
 	}

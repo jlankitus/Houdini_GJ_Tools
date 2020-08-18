@@ -295,7 +295,7 @@ MonoBehaviour:
     m_InvertInput: 0
     m_MinValue: -180
     m_MaxValue: 180
-    m_Wrap: 1
+    m_Wrap: 0
     m_Recentering:
       m_enabled: 0
       m_WaitTime: 1
@@ -303,7 +303,7 @@ MonoBehaviour:
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
   m_Heading:
-    m_Definition: 2
+    m_Definition: 3
     m_VelocityFilterStrength: 4
     m_Bias: 0
   m_RecenterToTargetHeading:
@@ -312,7 +312,7 @@ MonoBehaviour:
     m_RecenteringTime: 2
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
-  m_BindingMode: 3
+  m_BindingMode: 4
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 50
@@ -528,7 +528,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324176611}
-  m_LocalRotation: {x: 0.006435622, y: -0.0000000034846868, z: 2.2426595e-11, w: 0.9999793}
+  m_LocalRotation: {x: 0.0064356164, y: -0.0000000013743576, z: 8.845022e-12, w: 0.9999793}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 3
+  m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 5, z: -30}
   m_XDamping: 1
   m_YDamping: 1
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_RollDamping: 0
   m_AngularDamping: 0
   m_Heading:
-    m_Definition: 2
+    m_Definition: 3
     m_VelocityFilterStrength: 4
     m_Bias: 0
   m_RecenterToTargetHeading:
@@ -939,7 +939,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487233913}
-  m_LocalRotation: {x: -0.0090091685, y: -0.0000000034109426, z: -3.0731005e-11, w: 0.9999594}
+  m_LocalRotation: {x: -0.009638051, y: -0.022151148, z: -0.00021355621, w: 0.9997082}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1025,8 +1025,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564441700}
-  m_LocalRotation: {x: -0.009009181, y: -0.0000000065465278, z: -5.898125e-11, w: 0.9999594}
-  m_LocalPosition: {x: 0.56, y: 98.8, z: -71.6}
+  m_LocalRotation: {x: -0.009638068, y: -0.02215115, z: -0.0002135565, w: 0.9997082}
+  m_LocalPosition: {x: 3.9, y: -129.8, z: -46.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1222,8 +1222,8 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0
   m_VerticalDamping: 0
-  m_ScreenX: 0.5
-  m_ScreenY: 0.6244312
+  m_ScreenX: 0.5312213
+  m_ScreenY: 0.6253068
   m_DeadZoneWidth: 0.23899354
   m_DeadZoneHeight: 0.2329247
   m_SoftZoneWidth: 0.57777786
@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 3
+  m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 5, z: -30}
   m_XDamping: 1
   m_YDamping: 1
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_RollDamping: 0
   m_AngularDamping: 0
   m_Heading:
-    m_Definition: 2
+    m_Definition: 3
     m_VelocityFilterStrength: 4
     m_Bias: 0
   m_RecenterToTargetHeading:
@@ -1400,7 +1400,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861599946}
-  m_LocalRotation: {x: 0.082480535, y: -3.2786902e-18, z: -1.0493561e-16, w: 0.9965927}
+  m_LocalRotation: {x: 0.08248053, y: -1e-45, z: -0, w: 0.9965927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1519,7 +1519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966927685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 93.8, z: -41.6}
+  m_LocalPosition: {x: 3.9, y: -134.8, z: -16.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 294636547}
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 3
+  m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 5, z: -30}
   m_XDamping: 1
   m_YDamping: 1
@@ -1696,7 +1696,7 @@ MonoBehaviour:
   m_RollDamping: 0
   m_AngularDamping: 0
   m_Heading:
-    m_Definition: 2
+    m_Definition: 3
     m_VelocityFilterStrength: 4
     m_Bias: 0
   m_RecenterToTargetHeading:
