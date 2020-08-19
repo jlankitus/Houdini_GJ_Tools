@@ -20,6 +20,46 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ChangeToObject1",
+                    "type": "Button",
+                    "id": "6148084d-ba05-418b-b02a-929feebac42c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "ChangeToObject2",
+                    "type": "Button",
+                    "id": "ba7f69bb-4dca-45c9-9685-e5367818a724",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "ChangeToObject3",
+                    "type": "Button",
+                    "id": "60e0eb8c-038e-418c-8d3b-456ad485e36c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "ConfirmBuild",
+                    "type": "Button",
+                    "id": "988d5010-73fe-4d08-8ddc-2315fbfc5760",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "CreateNewTurret",
+                    "type": "Button",
+                    "id": "cd0e5b22-886a-46a3-907e-593757c7bbcb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -86,6 +126,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a17bebe-ee26-4892-befd-1d3f2742dab2",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeToObject1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2236b128-751c-4e93-a818-3a47eaafac96",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeToObject2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3305e2c-de2f-4cbb-affe-913751a76c41",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeToObject3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29399238-c341-4d32-af88-f28b731a3a63",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ConfirmBuild",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cab93bb4-2614-495f-a1a1-f3552fa22af4",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CreateNewTurret",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1fa7a2c7-1065-4560-b5c0-7d16f1f57e69",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CreateNewTurret",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
