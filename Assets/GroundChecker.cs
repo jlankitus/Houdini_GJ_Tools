@@ -34,5 +34,6 @@ public class GroundChecker : MonoBehaviour
             distanceToGround = hit.distance;
             groundNormal = hit.normal;
         }
+        
     }
 }

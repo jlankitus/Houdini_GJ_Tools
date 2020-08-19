@@ -232,8 +232,8 @@ public class MovingSphere : MonoBehaviour {
 			Mathf.MoveTowards(currentZ, desiredVelocity.z, maxSpeedChange);
 
 		velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
-		
-		if(needsStraightened) StandUpStraight();
+        
+        if (needsStraightened) StandUpStraight();
 	}
 
 	void Jump (Vector3 gravity) {
