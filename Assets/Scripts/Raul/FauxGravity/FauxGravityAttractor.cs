@@ -31,7 +31,8 @@ public class FauxGravityAttractor : MonoBehaviour
         // Get RigidBody
         Rigidbody rb = attractedTransform.GetComponent<Rigidbody>();
         // Add Gravity Force
-        rb.AddForce(gravityUp * gravity);
+        //rb.AddForce(gravityUp * gravity * attractedTransform.GetComponent<Rigidbody>().mass);
+        rb.velocity += gravityUp * gravity * Time.deltaTime;
 
         // Get the desired rotation difference
         Quaternion targetRotation = Quaternion.FromToRotation(bodyUp, gravityUp);

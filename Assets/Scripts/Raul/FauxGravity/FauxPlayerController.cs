@@ -32,8 +32,7 @@ public class FauxPlayerController : MonoBehaviour
 
     public void OnJump(InputValue input)
     {
-        if (input.isPressed)
-            currentJumpSpeed = jumpSpeed;
+        currentJumpSpeed = jumpSpeed;
     }
     
     private void FixedUpdate()
@@ -41,25 +40,35 @@ public class FauxPlayerController : MonoBehaviour
         if (moveDir.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(moveDir.x, moveDir.z) * Mathf.Rad2Deg + mainCameraTransform.localEulerAngles.y; //- transform.eulerAngles.y;
-
+        
             Vector3 yRotation = Vector3.up * targetAngle * 50f * Time.fixedDeltaTime;
             Quaternion deltaRotation = Quaternion.Euler(yRotation);
             Quaternion targetRotation = rigidbody.rotation * deltaRotation;
 
             // Set Rotation of the Child
-            GFXTransform.GetComponent<Rigidbody>().MoveRotation(Quaternion.Slerp(rigidbody.rotation, targetRotation, 50f * Time.deltaTime));
+            GFXTransform.GetComponent<Rigidbody>().MoveRotation(Quaternion.Slerp(rigidbody.rotation, targetRotation, 500f * Time.deltaTime));
 
             // Get current Position as reference, since we are adding a Delta
-            Vector3 newPosition = rigidbody.position;
+            //Vector3 newPosition = rigidbody.position;
+            Vector3 velocity = Vector3.zero;
+            //Vector3 newPosition = Vector3.zero;
             // Add Forward facing movement, based on Child orientation
-            newPosition += GFXTransform.forward * moveSpeed * Time.deltaTime;
-            // Add Jump Movement, based on Child orientation
-            newPosition += GFXTransform.up * currentJumpSpeed * Time.deltaTime;
-            // Apply total Movement to rigidbody
-            rigidbody.MovePosition(newPosition);
+            //newPosition += GFXTransform.forward * moveSpeed * Time.deltaTime;
 
-            currentJumpSpeed = Mathf.Lerp(currentJumpSpeed, 0f, 0.2f);
+            velocity += GFXTransform.forward * moveSpeed; //* Time.deltaTime;
+            // Add Jump Movement, based on Child orientation
+            //newPosition += GFXTransform.up * currentJumpSpeed * Time.deltaTime;
+            // Apply total Movement to rigidbody
+            //rigidbody.MovePosition(newPosition);
+            rigidbody.velocity += velocity;
+            // rigidbody.velocity += newPosition;
+            //GetComponent<CharacterController>().//Move(newPosition);
+
+            
         }
+
+        rigidbody.velocity += GFXTransform.up * currentJumpSpeed;
+        currentJumpSpeed = 0f;
     }
     
 }
