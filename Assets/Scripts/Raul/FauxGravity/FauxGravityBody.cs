@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class FauxGravityBody : MonoBehaviour
 {
+    [Tooltip("The Attractor which should Pull this Object")]
     public FauxGravityAttractor attractor;
 
     private Transform myTransform;
-    private Rigidbody rigidbody;
+    private Rigidbody myRigidbody;
     // Start is called before the first frame update
     void Start()
     {
         myTransform = transform;
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-        rigidbody.useGravity = false;
+        myRigidbody = GetComponent<Rigidbody>();
+        myRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        myRigidbody.useGravity = false;
     }
 
     // Update is called once per frame
