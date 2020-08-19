@@ -301,14 +301,14 @@ Material:
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _Edgecolor: {r: 0.7941176, g: 0.1284602, b: 0.1284602, a: 0.666}
-    - _Edgecolor1: {r: 0.7941176, g: 0.1284602, b: 0.1284602, a: 0.666}
+    - _Edgecolor1: {r: 0.7921569, g: 0.12941176, b: 0.12941176, a: 0.666}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _Maincolor: {r: 0.7941176, g: 0.1284602, b: 0.1284602, a: 0.666}
-    - _Maincolor1: {r: 0.7941176, g: 0.1284602, b: 0.1284602, a: 0.666}
+    - _Maincolor1: {r: 0.7921569, g: 0.12941176, b: 0.15536122, a: 0.666}
     - _Mainpanningspeed: {r: 0, g: 0, b: 0, a: 0}
     - _Mainpanningspeed1: {r: 0, g: 0, b: 0, a: 0}
     - _Noisespeed: {r: 0, g: 0, b: 0, a: 0}

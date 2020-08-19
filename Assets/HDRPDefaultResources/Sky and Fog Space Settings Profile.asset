@@ -125,7 +125,7 @@ MonoBehaviour:
     m_Value: 1
   skyAmbientMode:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   fogType:
     m_OverrideState: 1
     m_Value: 3
@@ -156,7 +156,7 @@ MonoBehaviour:
     m_Value: 0.01
   multiplier:
     m_OverrideState: 1
-    m_Value: 0.01
+    m_Value: 0.0025
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -166,8 +166,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0.47256994, y: 0.28666174, z: 0.5}
   desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
+    m_OverrideState: 1
+    m_Value: 1
   updateMode:
     m_OverrideState: 0
     m_Value: 0
