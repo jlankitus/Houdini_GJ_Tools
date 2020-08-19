@@ -48,25 +48,12 @@ public class FauxPlayerController : MonoBehaviour
             // Set Rotation of the Child
             GFXTransform.GetComponent<Rigidbody>().MoveRotation(Quaternion.Slerp(rigidbody.rotation, targetRotation, 500f * Time.deltaTime));
 
-            // Get current Position as reference, since we are adding a Delta
-            //Vector3 newPosition = rigidbody.position;
-            Vector3 velocity = Vector3.zero;
-            //Vector3 newPosition = Vector3.zero;
             // Add Forward facing movement, based on Child orientation
-            //newPosition += GFXTransform.forward * moveSpeed * Time.deltaTime;
-
-            velocity += GFXTransform.forward * moveSpeed; //* Time.deltaTime;
-            // Add Jump Movement, based on Child orientation
-            //newPosition += GFXTransform.up * currentJumpSpeed * Time.deltaTime;
-            // Apply total Movement to rigidbody
-            //rigidbody.MovePosition(newPosition);
-            rigidbody.velocity += velocity;
-            // rigidbody.velocity += newPosition;
-            //GetComponent<CharacterController>().//Move(newPosition);
-
+            rigidbody.velocity += GFXTransform.forward * moveSpeed; //* Time.deltaTime;
             
         }
 
+        // Add Jump Movement, based on Child orientation
         rigidbody.velocity += GFXTransform.up * currentJumpSpeed;
         currentJumpSpeed = 0f;
     }
