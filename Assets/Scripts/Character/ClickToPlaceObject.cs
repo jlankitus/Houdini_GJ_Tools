@@ -8,14 +8,8 @@ using UnityEngine.InputSystem;
 public class ClickToPlaceObject : MonoBehaviour
 {
     public GameObject[] placeableObjects = new GameObject[3];
-    public GameObject currentObjectToGenerate = null;
-
-    [Tooltip("The Attractor which should Pull this Object")]
-    public FauxGravityAttractor attractor;
-
-    //[SerializeField]
-    //private KeyCode newObjectHotkey = KeyCode.Alpha1;
-
+    private GameObject currentObjectToGenerate = null;
+    
     private GameObject objectGhostToPlace = null;
 
     private float mouseWheelRotation;
