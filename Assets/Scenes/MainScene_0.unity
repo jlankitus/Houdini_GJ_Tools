@@ -468,7 +468,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324176611}
-  m_LocalRotation: {x: 0.0064356206, y: 0.000000003456276, z: -2.2243743e-11, w: 0.9999793}
+  m_LocalRotation: {x: 0.00643562, y: 0.000000003218918, z: -2.0716163e-11, w: 0.9999793}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -891,7 +891,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487233913}
-  m_LocalRotation: {x: 0.021659497, y: -0.10839491, z: 0.002362262, w: 0.9938691}
+  m_LocalRotation: {x: 0.021623386, y: -0.12263895, z: 0.0026726834, w: 0.9922122}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -977,7 +977,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564441700}
-  m_LocalRotation: {x: 0.021659495, y: -0.10839491, z: 0.002362262, w: 0.9938692}
+  m_LocalRotation: {x: 0.021623386, y: -0.12263894, z: 0.0026726841, w: 0.9922121}
   m_LocalPosition: {x: 0, y: 5, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1352,7 +1352,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861599946}
-  m_LocalRotation: {x: 0.08248053, y: 1e-45, z: -0, w: 0.9965927}
+  m_LocalRotation: {x: 0.08248048, y: 7.6667763e-16, z: -4.174831e-17, w: 0.9965927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1795,6 +1795,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlanetNewGravity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731909091169337002, guid: 85bdf18797f530946b6e498226a3ad6e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4731909091169337003, guid: 85bdf18797f530946b6e498226a3ad6e,
         type: 3}
