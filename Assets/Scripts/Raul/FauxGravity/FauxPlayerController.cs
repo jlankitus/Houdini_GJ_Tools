@@ -18,6 +18,10 @@ public class FauxPlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     private float currentJumpSpeed = 0f;
+    private bool isJumping = false, isDescending = false;
+    private float totalTime = 0f;
+
+    private float t;
 
     private void Start()
     {
@@ -32,7 +36,8 @@ public class FauxPlayerController : MonoBehaviour
 
     public void OnJump(InputValue input)
     {
-        currentJumpSpeed = jumpSpeed;
+        if (!isJumping)
+            isJumping = true;
     }
     
     private void FixedUpdate()
@@ -54,8 +59,22 @@ public class FauxPlayerController : MonoBehaviour
         }
 
         // Add Jump Movement, based on Child orientation
+        if (isJumping)
+        {
+            currentJumpSpeed = Mathf.Lerp(0, jumpSpeed, t);
+            t += 0.5f * Time.deltaTime;
+
+            if (t >= 0.99)
+            {
+                isJumping = false;
+            }
+        } else
+        {
+            currentJumpSpeed = 0;
+        }
+        
+
         rigidbody.velocity += GFXTransform.up * currentJumpSpeed;
-        currentJumpSpeed = 0f;
     }
     
 }
