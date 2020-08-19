@@ -18,7 +18,6 @@ public class ThirdPersonMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    Vector3 a = Vector3.zero;
 
     void FixedUpdate()
     {
@@ -42,11 +41,5 @@ public class ThirdPersonMovement : MonoBehaviour
             rigidbody.MovePosition(transform.position + direction * moveSpeed * Time.deltaTime);
 
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, a);
     }
 }
