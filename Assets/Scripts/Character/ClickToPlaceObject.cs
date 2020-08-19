@@ -39,7 +39,7 @@ public class ClickToPlaceObject : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hitInfo, LayerMask.GetMask("Planet")))
+        if (Physics.Raycast(ray, out hitInfo, 500f, LayerMask.GetMask("Planet")))
         {
             if (hitInfo.collider != objectGhostToPlace)
             {
@@ -97,14 +97,10 @@ public class ClickToPlaceObject : MonoBehaviour
             // Make sure we have a Collider and we are targeting the Planet Layer
             if (hitInfo.collider && hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Planet"))
             {
-                // Make sure the Raycast hitpoint is on the Planet Surface, or close enough
-                if ((hitInfo.collider.transform.position - objectGhostToPlace.transform.position).magnitude <= hitInfo.collider.transform.localScale.magnitude * hitInfo.collider.GetComponent<SphereCollider>().radius + 0.1)
-                {
-                    // Place the turret and enable the Collider
-                    objectGhostToPlace.GetComponent<Collider>().enabled = true;
-                    // Remove the reference, so we don't move it again
-                    objectGhostToPlace = null;
-                }
+                // Place the turret and enable the Collider
+                objectGhostToPlace.GetComponent<Collider>().enabled = true;
+                // Remove the reference, so we don't move it again
+                objectGhostToPlace = null;
             }
         }
     }

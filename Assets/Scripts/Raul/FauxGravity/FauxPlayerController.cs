@@ -13,15 +13,22 @@ public class FauxPlayerController : MonoBehaviour
 
     private Vector3 moveDir;
     private Rigidbody rigidbody;
+    private TriggerGroundCheck _triggerGroundChecker;
 
     // Local rotation related
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     private float currentJumpSpeed = 0f;
+    private bool jumpButtonPressed = false, isDescending = false;
+    private float totalTime = 0f;
+
+    [SerializeField] float jumpInputRememberTime = 0.2f;
+    private float _jumpInputRemember = 0;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        _triggerGroundChecker = GetComponentInChildren<TriggerGroundCheck>();
     }
 
     // Update is called once per frame
@@ -32,7 +39,19 @@ public class FauxPlayerController : MonoBehaviour
 
     public void OnJump(InputValue input)
     {
-        currentJumpSpeed = jumpSpeed;
+        DoJump();
+        /*if (!isJumping)
+        {
+            isJumping = true;
+            // Offset the jump acceleration a bit
+            t = 0.4f;
+        }*/
+    }
+
+    private void DoJump()
+    {
+        _jumpInputRemember = jumpInputRememberTime;
+        jumpButtonPressed = true;
     }
     
     private void FixedUpdate()
@@ -53,9 +72,38 @@ public class FauxPlayerController : MonoBehaviour
             
         }
 
+
+        // Handle Jumping
+        _jumpInputRemember -= Time.fixedDeltaTime;
+        Vector3 jumpVelocity = Vector3.zero;
+        if (_triggerGroundChecker.isCurrentlyGrounded && _jumpInputRemember > 0)
+        {
+            jumpVelocity = GFXTransform.up * jumpSpeed;
+
+            _triggerGroundChecker.isCurrentlyGrounded = false;
+            _jumpInputRemember = 0;
+        }
+
+        rigidbody.velocity += jumpVelocity;
         // Add Jump Movement, based on Child orientation
+        /*
+        if (isJumping)
+        {
+            currentJumpSpeed = Mathf.Lerp(0, jumpSpeed, t);
+            t += 3f * Time.deltaTime;
+
+            if (t >= 0.99)
+            {
+                isJumping = false;
+            }
+        } else
+        {
+            currentJumpSpeed = 0;
+        }
+        
+
         rigidbody.velocity += GFXTransform.up * currentJumpSpeed;
-        currentJumpSpeed = 0f;
+        */
     }
     
 }
