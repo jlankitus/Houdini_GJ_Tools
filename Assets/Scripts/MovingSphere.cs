@@ -153,7 +153,8 @@ public class MovingSphere : MonoBehaviour {
 			contactNormal = upAxis;
 		}
 	}
-
+	
+	/*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -169,6 +170,7 @@ public class MovingSphere : MonoBehaviour {
         //Gizmos.DrawLine(transform.position, transform.position + velocity);
         // Gizmos.DrawLine(new Vector3(0, 0, 0), transform.position);
     }
+    */
 
     Vector3 myContactNormal;
 

@@ -25,14 +25,9 @@ public class ShootingTurret : MonoBehaviour
     private void rotateBarrelToTarget()
     {
         var directionBetween = shootTarget.position - barrelRotation.position;
-        Debug.DrawRay(barrelRotation.position, directionBetween * 1000f);
+        // Debug.DrawRay(barrelRotation.position, directionBetween * 1000f);
         var targetRotation = Quaternion.LookRotation(directionBetween);
         targetRotation *= rotationOffset;
         barrelRotation.rotation = targetRotation;
-        /*
-        var targetRotation = Quaternion.LookRotation (shootTarget.position - barrelRotation.position);
-        var str = Mathf.Min (strength * Time.deltaTime, 1);
-        barrelRotation.rotation = Quaternion.Lerp (transform.rotation, targetRotation, str);
-        */
     }
 }
