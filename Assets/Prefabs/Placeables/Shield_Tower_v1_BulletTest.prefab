@@ -380,6 +380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6732418287217071131}
   - component: {fileID: 2434323112059204221}
+  - component: {fileID: 5350217043345568613}
   m_Layer: 0
   m_Name: Shield_Tower_v1_BulletTest
   m_TagString: Untagged
@@ -424,6 +425,25 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.38, z: 0}
+--- !u!114 &5350217043345568613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207519873738378913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22ff86274706e44689c6c63f8c6e21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletHole: {fileID: 0}
+  bulletPrefab: {fileID: 9103684596283500771, guid: 8068a1de14380fd4aa6efeb5cd511ebe,
+    type: 3}
+  barrelRotation: {fileID: 8691256692603957610}
+  shootTarget: {fileID: 0}
+  strength: 0.5
+  rotationOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
 --- !u!1 &7282894185232306162
 GameObject:
   m_ObjectHideFlags: 0
