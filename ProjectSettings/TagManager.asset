@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - Tile
+  - Enemy
   layers:
   - Default
   - TransparentFX
