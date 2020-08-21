@@ -13,8 +13,8 @@ public class MovingSphere : MonoBehaviour {
 	[SerializeField, Range(0f, 100f)]
 	float maxAcceleration = 10f, maxAirAcceleration = 1f;
 
-	[SerializeField, Range(0f, 10f)]
-	float jumpHeight = 2f;
+	[SerializeField, Range(0f, 100f)]
+	public float jumpHeight = 2f;
 
 	[SerializeField, Range(0, 5)]
 	int maxAirJumps = 0;
@@ -176,9 +176,7 @@ public class MovingSphere : MonoBehaviour {
 
     private void StandUpStraight()
 	{
-
-        Debug.Log("contact normal: " + contactNormal);
-		Debug.Log("velocity: " + velocity);
+        
         Vector3 moveDirection = new Vector3(playerInput.x, 0, playerInput.y);
 
 
@@ -194,8 +192,6 @@ public class MovingSphere : MonoBehaviour {
         var velocityDirection = Quaternion.LookRotation(velocity);
 		var velocityVector = velocityDirection.eulerAngles;
         
-		Debug.Log("rot q " + transform.rotation);
-		
 	}
 
 	bool SnapToGround () {

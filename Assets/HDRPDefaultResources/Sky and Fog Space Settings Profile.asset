@@ -126,11 +126,11 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 0.4
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.2
     min: 0
     max: 1
   scatter:
@@ -204,13 +204,13 @@ MonoBehaviour:
     max: 360
   skyIntensityMode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0.01
+    m_Value: -6
   multiplier:
     m_OverrideState: 1
-    m_Value: 0.0025
+    m_Value: 0.025
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
     m_Value: {x: 0.47256994, y: 0.28666174, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 5.23
   updateMode:
     m_OverrideState: 0
     m_Value: 0
