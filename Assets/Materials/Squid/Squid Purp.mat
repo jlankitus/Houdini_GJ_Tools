@@ -189,7 +189,7 @@ Material:
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
-    - _Metallic: 1
+    - _Metallic: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
     - _PPDLodThreshold: 5
@@ -200,7 +200,7 @@ Material:
     - _ReceivesSSR: 1
     - _RefractionModel: 0
     - _SSRefractionProjectionModel: 0
-    - _Smoothness: 0.1
+    - _Smoothness: 0.244
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
@@ -242,9 +242,9 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5660378, g: 0.17888929, b: 0.39513436, a: 1}
+    - _BaseColor: {r: 0.50188166, g: 0.18262726, b: 0.6792453, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.5660378, g: 0.17888924, b: 0.39513433, a: 1}
+    - _Color: {r: 0.5018816, g: 0.18262723, b: 0.6792453, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

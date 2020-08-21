@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Planet 2.3
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
-  m_ShaderKeywords: _MASKMAP _NORMALMAP _NORMALMAP_TANGENT_SPACE
+  m_ShaderKeywords: _DISPLACEMENT_LOCK_TILING_SCALE _HEIGHTMAP _MASKMAP _NORMALMAP
+    _NORMALMAP_TANGENT_SPACE _VERTEX_DISPLACEMENT _VERTEX_DISPLACEMENT_LOCK_OBJECT_SCALE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -57,7 +58,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 23f0b7cecf14c914a8b2572eff219fd9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IridescenceMaskMap:
@@ -73,7 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: fe7e2ca1d5f18b447a5863df04c8cfbf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 23089e6224ae1384d86586c6902b066a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -135,7 +136,7 @@ Material:
     - _DiffusionProfileHash: 0
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
-    - _DisplacementMode: 0
+    - _DisplacementMode: 1
     - _DistortionBlendMode: 0
     - _DistortionBlurBlendMode: 0
     - _DistortionBlurDstBlend: 1
@@ -161,11 +162,11 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _HeightAmplitude: 0.02
-    - _HeightCenter: 0.5
+    - _HeightAmplitude: 0.01
+    - _HeightCenter: -0
     - _HeightMapParametrization: 0
     - _HeightMax: 1
-    - _HeightMin: -1
+    - _HeightMin: 0
     - _HeightOffset: 0
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
@@ -188,7 +189,7 @@ Material:
     - _RefractionModel: 0
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
-    - _SmoothnessRemapMax: 0.09677422
+    - _SmoothnessRemapMax: 0.27419358
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
