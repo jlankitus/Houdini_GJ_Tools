@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 443b09d5dd21ea74e86ecd930ecc1f40, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 6732418287217071131}
   - component: {fileID: 2434323112059204221}
   m_Layer: 0
-  m_Name: Shield_Tower_v1
+  m_Name: Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

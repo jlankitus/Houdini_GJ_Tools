@@ -77,12 +77,12 @@ public class ClickToPlaceObject : MonoBehaviour
         if (objectGhostToPlace != null)
         {
             Destroy(objectGhostToPlace);
+            return;
         }
-        else
-        {
-            objectGhostToPlace = Instantiate(currentObjectToGenerate);
-            objectGhostToPlace.GetComponent<Collider>().enabled = false;
-        }
+        
+        objectGhostToPlace = Instantiate(currentObjectToGenerate);
+        objectGhostToPlace.GetComponent<Collider>().enabled = false;
+        
         // Rotate it based on Mouse Scroll
         RotateFromMouseWheel();
 
