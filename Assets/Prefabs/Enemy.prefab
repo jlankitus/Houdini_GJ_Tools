@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 8847357488310242195}
   - component: {fileID: 8847357489422831158}
   - component: {fileID: 740462940605810250}
+  - component: {fileID: 4118592445825977574}
   - component: {fileID: 8110569364534644890}
   - component: {fileID: 914920588446824139}
   m_Layer: 0
@@ -305,6 +306,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.12
   m_Center: {x: -0.01, y: -0.02, z: -0.08}
+--- !u!64 &4118592445825977574
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847357488310242204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_Mesh: {fileID: -5191020435162008558, guid: 45feac7ca826b394ca4862381997dd3c, type: 3}
 --- !u!114 &8110569364534644890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +364,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6aeda3a45c7a26f4d9b17ce2bc48e4d5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
