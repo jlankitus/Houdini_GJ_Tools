@@ -182,8 +182,8 @@ public class EnemyMovement : MonoBehaviour {
     private void StandUpStraight()
 	{
 
-        Debug.Log("contact normal: " + contactNormal);
-		Debug.Log("velocity: " + velocity);
+  //      Debug.Log("contact normal: " + contactNormal);
+		//Debug.Log("velocity: " + velocity);
         Vector3 moveDirection = new Vector3(playerInput.x, 0, playerInput.y);
 
 
@@ -199,7 +199,7 @@ public class EnemyMovement : MonoBehaviour {
         var velocityDirection = Quaternion.LookRotation(velocity);
 		var velocityVector = velocityDirection.eulerAngles;
         
-		Debug.Log("rot q " + transform.rotation);
+		//Debug.Log("rot q " + transform.rotation);
 		
 	}
 
