@@ -28,6 +28,7 @@ public class GameLoop : Singleton<GameLoop>
     public EnemySpawn enemySpawn;
     public OrbitCamera orbitCamera;
     public Transform characterTransform;
+    public MovingSphere characterMovement;
 
     private void Start()
     {
@@ -39,10 +40,17 @@ public class GameLoop : Singleton<GameLoop>
         towelCount.text = towels.ToString();
         if (towels % 3 == 0)
         {
-            enemySpawn.SpawnEnemy();
-            enemySpawn.SpawnEnemy();
-            enemySpawn.SpawnEnemy();
+            OnWaveComplete();
+            
         }
+    }
+
+    private void OnWaveComplete()
+    {
+        enemySpawn.SpawnEnemy();
+        enemySpawn.SpawnEnemy();
+        enemySpawn.SpawnEnemy();
+        characterMovement.jumpHeight += 1;
     }
 
     private void GetGlitchRef()

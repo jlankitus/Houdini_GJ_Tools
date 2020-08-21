@@ -13,8 +13,8 @@ public class MovingSphere : MonoBehaviour {
 	[SerializeField, Range(0f, 100f)]
 	float maxAcceleration = 10f, maxAirAcceleration = 1f;
 
-	[SerializeField, Range(0f, 10f)]
-	float jumpHeight = 2f;
+	[SerializeField, Range(0f, 100f)]
+	public float jumpHeight = 2f;
 
 	[SerializeField, Range(0, 5)]
 	int maxAirJumps = 0;
