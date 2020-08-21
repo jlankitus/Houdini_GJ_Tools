@@ -204,9 +204,10 @@ GameObject:
   - component: {fileID: 740462940605810250}
   - component: {fileID: 740462940605810251}
   - component: {fileID: 740462940605810248}
+  - component: {fileID: 4694533011310113908}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,6 +330,38 @@ MonoBehaviour:
   - {fileID: 6207519873738378913, guid: d7af59cf4273b514cb2b076a1266a229, type: 3}
   - {fileID: 6207519873738378913, guid: d6e4509ef7e522a4daa9f41c28e4683b, type: 3}
   - {fileID: 6207519873738378913, guid: 59a2379dcfa6a4c4f96d78779a4d1c44, type: 3}
+--- !u!114 &4694533011310113908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847357488310242204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8814a87585d0943b1151e711c3f50d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInputSpace: {fileID: 0}
+  maxSpeed: 10
+  maxAcceleration: 10
+  maxAirAcceleration: 1
+  jumpHeight: 2
+  maxAirJumps: 0
+  maxGroundAngle: 25
+  maxStairsAngle: 50
+  maxSnapSpeed: 100
+  probeDistance: 1
+  probeMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stairsMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  playerTransform: {fileID: 0}
+  enemySpeed: 0.7
+  hitCount: 0
+  hitCapacity: 4
 --- !u!1001 &740462940888813934
 PrefabInstance:
   m_ObjectHideFlags: 0

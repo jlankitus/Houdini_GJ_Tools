@@ -31,6 +31,7 @@ public class ShootingTurret : MonoBehaviour
         else
         {
             FindEnemy();
+            enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
         }
     }
 
@@ -58,11 +59,14 @@ public class ShootingTurret : MonoBehaviour
         {
             foreach (var enemy in enemies)
             {
-                var distance = Vector3.Distance(transform.position,enemy.transform.position);
-                if (distance < range)
+                if (enemy != null)
                 {
-                    shootTarget = enemy.transform;
-                    break;
+                    var distance = Vector3.Distance(transform.position,enemy.transform.position);
+                    if (distance < range)
+                    {
+                        shootTarget = enemy.transform;
+                        break;
+                    }
                 }
             }
         }

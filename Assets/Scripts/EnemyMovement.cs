@@ -59,6 +59,8 @@ public class EnemyMovement : MonoBehaviour {
 
 	public Transform playerTransform;
 	public float enemySpeed = 1.0f;
+	public float hitCount = 0;
+	public float hitCapacity = 4;
 
 	void OnValidate () {
 		minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
@@ -68,6 +70,8 @@ public class EnemyMovement : MonoBehaviour {
 	void Awake () {
 		body = GetComponent<Rigidbody>();
 		body.useGravity = false;
+		playerInputSpace = GameLoop.Instance.orbitCamera.transform;
+		playerTransform = GameLoop.Instance.characterTransform;
 		OnValidate();
 	}
 
@@ -293,6 +297,10 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision collision) {
+		if (collision.gameObject.CompareTag("Bullet"))
+		{
+			OnHitByBullet();
+		}
 		EvaluateCollision(collision);
 	}
 
@@ -314,6 +322,21 @@ public class EnemyMovement : MonoBehaviour {
 				steepNormal += normal;
 			}
 		}
+	}
+
+	void OnHitByBullet()
+	{
+		hitCount += 1;
+		if (hitCount >= hitCapacity)
+		{
+			GameLoop.Instance.AddTowel();
+			Die();
+		}
+	}
+
+	void Die()
+	{
+		Destroy(gameObject);
 	}
 
 	Vector3 ProjectDirectionOnPlane (Vector3 direction, Vector3 normal) {
