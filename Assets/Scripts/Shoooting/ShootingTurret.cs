@@ -15,7 +15,8 @@ public class ShootingTurret : MonoBehaviour
 
     private List<GameObject> enemies;
     private float nextActionTime = 0.0f;
-    public float rate = 0.1f;
+    public float bulletCooldown = 0.1f;
+    private float lastBulletTime;
 
     void Start()
     {
@@ -26,7 +27,7 @@ public class ShootingTurret : MonoBehaviour
         if (shootTarget != null)
         {
             RotateBarrelToTarget();
-            FireAtRate(rate);
+            StartCoroutine(FireAtRate(bulletCooldown));
         }
         else
         {
@@ -35,13 +36,27 @@ public class ShootingTurret : MonoBehaviour
         }
     }
 
-    void FireAtRate(float rate)
+    //void FireAtRate(float rate)
+    //{
+    //    if (Time.time > nextActionTime ) 
+    //    {
+    //        nextActionTime += rate;
+    //        Instantiate(bulletPrefab, bulletHole.transform);
+    //    }
+    //}
+
+    IEnumerator FireAtRate(float rate)
     {
-        if (Time.time > nextActionTime ) 
+
+        if (Time.time - lastBulletTime <= bulletCooldown)
         {
-            nextActionTime += rate;
-            Instantiate(bulletPrefab, bulletHole.transform);
+            yield break;
         }
+
+        lastBulletTime = Time.time;
+
+        Instantiate(bulletPrefab, bulletHole.transform);
+        
     }
 
     private void RotateBarrelToTarget()

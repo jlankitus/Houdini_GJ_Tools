@@ -438,14 +438,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletHole: {fileID: 1302446826625335915}
-  bulletPrefab: {fileID: 9103684596283500771, guid: 8068a1de14380fd4aa6efeb5cd511ebe,
+  bulletPrefab: {fileID: 1254724754748870, guid: 0d91a86742400b948bc5296780cd3db1,
     type: 3}
   barrelRotation: {fileID: 8691256692603957610}
   shootTarget: {fileID: 0}
   strength: 0.5
   rotationOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   range: 5
-  rate: 0.5
+  bulletCooldown: 0.5
 --- !u!1 &7282894185232306162
 GameObject:
   m_ObjectHideFlags: 0
