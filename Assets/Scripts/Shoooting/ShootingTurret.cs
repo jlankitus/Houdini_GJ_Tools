@@ -15,33 +15,71 @@ public class ShootingTurret : MonoBehaviour
 
     private List<GameObject> enemies;
     private float nextActionTime = 0.0f;
-    public float rate = 0.1f;
+    public float bulletCooldown = 0.1f;
+    
+    public float enemyScanCycle = 1f;
+
+    // COROUTINE VARIABLES. DO NOT TOUCH!
+    private float lastBulletTime, lastScanTime;
 
     void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
     }
-    void Update()
+    void FixedUpdate()
     {
         if (shootTarget != null)
         {
             RotateBarrelToTarget();
-            FireAtRate(rate);
+            StartCoroutine(FireAtRate(bulletCooldown));
         }
-        else
-        {
-            FindEnemy();
-            enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
-        }
+
+        // Find enemies every Scan Cycle
+        StartCoroutine(ScanForEnemies());
+        
+        if (shootTarget == null)
+            LockOnEnemy();
     }
 
-    void FireAtRate(float rate)
+    //void FireAtRate(float rate)
+    //{
+    //    if (Time.time > nextActionTime ) 
+    //    {
+    //        nextActionTime += rate;
+    //        Instantiate(bulletPrefab, bulletHole.transform);
+    //    }
+    //}
+
+    IEnumerator FireAtRate(float rate)
     {
-        if (Time.time > nextActionTime ) 
+        // Check if we should wait a bit longer or not.
+        if (Time.time - lastBulletTime <= bulletCooldown)
         {
-            nextActionTime += rate;
-            Instantiate(bulletPrefab, bulletHole.transform);
+            yield break;
         }
+
+        // Reset the clock
+        lastBulletTime = Time.time;
+
+        // Invoke a bullet to charge at the Enemy
+        Instantiate(bulletPrefab, bulletHole.transform);
+    }
+
+    private IEnumerator ScanForEnemies()
+    {
+        // Check if we should wait a bit longer or not.
+        if (Time.time - lastScanTime <= enemyScanCycle)
+        {
+            yield break;
+        }
+        // Reset the clock
+        lastScanTime = Time.time;
+        
+        // Refresh the list with new Enemies
+        enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+
+        // Reset the Shooting Target, so we don't accidentally end up shooting outside of our range
+        shootTarget = null;
     }
 
     private void RotateBarrelToTarget()
@@ -53,21 +91,26 @@ public class ShootingTurret : MonoBehaviour
         barrelRotation.rotation = targetRotation;
     }
 
-    private void FindEnemy()
+    private void LockOnEnemy()
     {
-        if(enemies.Count > 0)
+        
+        for (int i = 0; i < enemies.Count; i++)
         {
-            foreach (var enemy in enemies)
+            var currentEnemy = enemies[i];
+            if (currentEnemy == null)
             {
-                if (enemy != null)
-                {
-                    var distance = Vector3.Distance(transform.position,enemy.transform.position);
-                    if (distance < range)
-                    {
-                        shootTarget = enemy.transform;
-                        break;
-                    }
-                }
+                // Remove the enemy from the list, that way we have less to count through
+                enemies.Remove(currentEnemy);
+                // Reset our counter, since we need to check again the entry with this number
+                i--;
+                continue;
+            }
+
+            var distance = Vector3.Distance(transform.position, currentEnemy.transform.position);
+            if (distance < range)
+            {
+                shootTarget = currentEnemy.transform;
+                break;
             }
         }
     }

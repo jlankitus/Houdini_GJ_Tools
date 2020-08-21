@@ -183,7 +183,6 @@ public class EnemyMovement : MonoBehaviour {
 	{
 		Vector3 moveDirection = new Vector3(playerInput.x, 0, playerInput.y);
 
-
         var targetDirection = contactNormal;
         
         Vector3 yRotation = transform.position + velocity;
@@ -195,7 +194,6 @@ public class EnemyMovement : MonoBehaviour {
 
         var velocityDirection = Quaternion.LookRotation(velocity);
 		var velocityVector = velocityDirection.eulerAngles;
-		
 	}
 
 	bool SnapToGround () {
