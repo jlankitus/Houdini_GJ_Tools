@@ -54,6 +54,8 @@ public class GameLoop : Singleton<GameLoop>
             enemySpawn.SpawnEnemy();
         }
         characterMovement.jumpHeight += 1;
+        characterMovement.jumpHeight += 1;
+
     }
 
     private void GetGlitchRef()
