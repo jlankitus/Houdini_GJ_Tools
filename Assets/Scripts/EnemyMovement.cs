@@ -70,8 +70,13 @@ public class EnemyMovement : MonoBehaviour {
 	void Awake () {
 		body = GetComponent<Rigidbody>();
 		body.useGravity = false;
-		playerInputSpace = GameLoop.Instance.orbitCamera.transform;
-		playerTransform = GameLoop.Instance.characterTransform;
+		
+		// playerInputSpace = GameLoop.Instance.orbitCamera.transform;
+		// playerTransform = GameLoop.Instance.characterTransform;
+
+		playerInputSpace = GameObject.Find("Orbit Camera").transform;
+		playerTransform = GameObject.Find("Character").transform;
+		
 		OnValidate();
 	}
 
@@ -322,7 +327,7 @@ public class EnemyMovement : MonoBehaviour {
 		hitCount += 1;
 		if (hitCount >= hitCapacity)
 		{
-			GameLoop.Instance.AddTowel();
+			GameObject.Find("Game Loop").GetComponent<GameLoop>().AddTowel();
 			Die();
 		}
 	}

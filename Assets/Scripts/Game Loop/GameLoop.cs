@@ -41,15 +41,18 @@ public class GameLoop : Singleton<GameLoop>
         if (towels % 3 == 0)
         {
             OnWaveComplete();
-            
         }
     }
 
     private void OnWaveComplete()
     {
-        enemySpawn.SpawnEnemy();
-        enemySpawn.SpawnEnemy();
-        enemySpawn.SpawnEnemy();
+        var currentEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (currentEnemies.Length < 20)
+        {
+            enemySpawn.SpawnEnemy();
+            enemySpawn.SpawnEnemy();
+            enemySpawn.SpawnEnemy();
+        }
         characterMovement.jumpHeight += 1;
     }
 

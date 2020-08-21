@@ -57,6 +57,8 @@ public class MovingSphere : MonoBehaviour {
 
 	private bool needsStraightened = false;
 
+	public HeartCounter heartCounter;
+
 	void OnValidate () {
 		minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
 		minStairsDotProduct = Mathf.Cos(maxStairsAngle * Mathf.Deg2Rad);
@@ -153,26 +155,8 @@ public class MovingSphere : MonoBehaviour {
 			contactNormal = upAxis;
 		}
 	}
-	
-	/*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        //Gizmos.DrawLine(transform.position, targetDirection * 50);
-        Gizmos.DrawLine(transform.position, contactNormal);
-        //Gizmos.DrawLine(transform.position, playerInput);
-        //Vector3 yRotation = contactNormal * playerInput.y;
 
-        Gizmos.color = Color.green;
-        Vector3 yRotation = transform.position + velocity;
-        Gizmos.DrawLine(transform.position, yRotation);
-        //Gizmos.DrawLine(transform.position, velocity);
-        //Gizmos.DrawLine(transform.position, transform.position + velocity);
-        // Gizmos.DrawLine(new Vector3(0, 0, 0), transform.position);
-    }
-    */
-
-    Vector3 myContactNormal;
+	Vector3 myContactNormal;
 
     private void StandUpStraight()
 	{
@@ -288,6 +272,10 @@ public class MovingSphere : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision collision) {
+		if (collision.gameObject.CompareTag("Enemy"))
+		{
+			heartCounter.LoseLife();
+		}
 		EvaluateCollision(collision);
 	}
 
