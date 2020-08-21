@@ -202,9 +202,7 @@ GameObject:
   - component: {fileID: 8847357488310242195}
   - component: {fileID: 8847357489422831158}
   - component: {fileID: 740462940605810250}
-  - component: {fileID: 740462940605810251}
-  - component: {fileID: 740462940605810248}
-  - component: {fileID: 4694533011310113908}
+  - component: {fileID: 8110569364534644890}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -304,33 +302,9 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &740462940605810251
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847357488310242204}
-  m_Enabled: 1
---- !u!114 &740462940605810248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847357488310242204}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c984be2bb20ffc44bafba4da81ac2dc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placeableObjects:
-  - {fileID: 6207519873738378913, guid: d7af59cf4273b514cb2b076a1266a229, type: 3}
-  - {fileID: 6207519873738378913, guid: d6e4509ef7e522a4daa9f41c28e4683b, type: 3}
-  - {fileID: 6207519873738378913, guid: 59a2379dcfa6a4c4f96d78779a4d1c44, type: 3}
---- !u!114 &4694533011310113908
+  m_Radius: 1.12
+  m_Center: {x: -0.01, y: -0.02, z: -0.08}
+--- !u!114 &8110569364534644890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
