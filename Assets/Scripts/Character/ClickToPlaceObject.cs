@@ -14,10 +14,14 @@ public class ClickToPlaceObject : MonoBehaviour
 
     private float mouseWheelRotation;
 
+    private GameLoop gameLoop;
+
     private void Start()
     {
         if (placeableObjects.Length > 0)
             currentObjectToGenerate = placeableObjects[0];
+
+        gameLoop = UnityEngine.Object.FindObjectsOfType<GameLoop>()[0];
     }
 
     private void FixedUpdate()
@@ -98,12 +102,17 @@ public class ClickToPlaceObject : MonoBehaviour
             // Make sure we have a Collider and we are targeting the Planet Layer
             if (hitInfo.collider && hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Planet"))
             {
-                // Place the turret and enable the Collider
-                objectGhostToPlace.GetComponent<Collider>().enabled = true;
-                // Enable the shooting
-                objectGhostToPlace.GetComponentInChildren<ShootingTurret>().enabled = true;
-                // Remove the reference, so we don't move it again
-                objectGhostToPlace = null;
+                if (objectGhostToPlace.GetComponentInChildren<TurretLevel>().TurretCosts[0] <= gameLoop.Towels)
+                {
+                    gameLoop.Towels -= objectGhostToPlace.GetComponentInChildren<TurretLevel>().TurretCosts[0];
+                    // Place the turret and enable the Collider
+                    objectGhostToPlace.GetComponent<Collider>().enabled = true;
+                    // Enable the shooting
+                    objectGhostToPlace.GetComponentInChildren<ShootingTurret>().enabled = true;
+                    // Remove the reference, so we don't move it again
+                    objectGhostToPlace = null;
+                    
+                }
             }
         }
     }
