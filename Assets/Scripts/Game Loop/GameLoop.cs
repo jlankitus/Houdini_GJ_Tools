@@ -31,9 +31,12 @@ public class GameLoop : MonoBehaviour
     public MovingSphere characterMovement;
     public GameObject escapeCanvas;
 
+    public bool HasLeft = false;
+
     private void Start()
     {
         GetGlitchRef();
+        OnWaveComplete();
         // DontDestroyOnLoad(gameObject);
     }
 
@@ -91,6 +94,7 @@ public class GameLoop : MonoBehaviour
 
     public void OnEscape()
     {
+        HasLeft = true;
         escapeCanvas.SetActive(true);
         if(glitch != null) glitch.active = true;
     }

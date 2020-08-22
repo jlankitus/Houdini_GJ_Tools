@@ -12,32 +12,43 @@ public class TurretLevel : MonoBehaviour
     public Transform[] TransformsToTransfer;
     public int[] TurretCosts;
 
+    public GameLoop gameLoop;
+
     private void Start()
     {
         // Warn the Developer that something might be missing early
         if (TurretModels.Length != maxLevel)
             Debug.LogError("There is a mismatch between Max Level and the current available turret Models.");
 
+        gameLoop = Object.FindObjectsOfType<GameLoop>()[0];
+        
         // Create a Copy of the Transforms to take into account
         TransformsToTransfer = (Transform[]) TransformsToTransfer.Clone();
     }
 
-    public void LevelUp()
+    public void LevelUp()   
     {
-        // Increase current level
-        currentLevel++;
+        if (currentLevel < maxLevel)
+        {
+            if (gameLoop.Towels >= TurretCosts[currentLevel])
+            {
+                gameLoop.Towels -= TurretCosts[currentLevel];
+                
+                // Increase current level
+                currentLevel++;
+                if (currentLevel > maxLevel)
+                    currentLevel = maxLevel;
+                // Make sure we don't exceed max level
+                // Update the model only if we are not at Max level already
+                UpdateModel();
+
+            }
+        }
         
-        // Make sure we don't exceed max level
-        if (currentLevel > maxLevel)
-            currentLevel = maxLevel;
-        else 
-            // Update the model only if we are not at Max level already
-            UpdateModel();
     }
 
     private void UpdateModel()
     {
-        
         // Find and delete the Old models
         Transform child = transform.GetChild(0);
         GameObject.Destroy(child.gameObject);

@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/HomeScreen.unity
     guid: 5e2729eb3a1da92439b73f0ffa04b0db
   - enabled: 1
-    path: Assets/Scenes/ObjectPlacement/GameLoop.unity
-    guid: e830b55b1d0230c4091936d46e19d29b
+    path: Assets/Scenes/ProductionScenes/Level 1.unity
+    guid: 70cd62ad073d2bc42b0e8c55c8c840a6
   - enabled: 1
     path: Assets/Scenes/ObjectPlacement/GameLoop_Adjusted_3.unity
     guid: 172442f42b9c9af44968feb42f6a67ad
+  - enabled: 1
+    path: Assets/Scenes/ObjectPlacement/GameLoop.unity
+    guid: e830b55b1d0230c4091936d46e19d29b
+  - enabled: 1
+    path: Assets/Scenes/ProductionScenes/Plant Amores.unity
+    guid: 3bafee0b8f9ebc84ba4c6326f84bffed
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 122df6b02c923f642aa3fdb665e9db00,
       type: 2}
