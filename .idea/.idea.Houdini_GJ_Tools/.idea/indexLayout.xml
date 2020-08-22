@@ -22,12 +22,14 @@
       <Path>Library/PackageCache/com.unity.textmeshpro@3.0.1</Path>
       <Path>Library/PackageCache/com.unity.timeline@1.2.14</Path>
       <Path>Library/PackageCache/com.unity.visualeffectgraph@8.2.0</Path>
+      <Path>Library/PackageCache/jp.keijiro.kino.post-processing@2.1.15</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
     </explicitIncludes>
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>Build</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
