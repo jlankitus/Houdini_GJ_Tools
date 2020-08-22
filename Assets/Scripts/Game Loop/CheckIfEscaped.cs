@@ -26,6 +26,7 @@ public class CheckIfEscaped : MonoBehaviour
     private void HasExcaped()
     {
        Debug.LogError("ESCAPED");
+       FindObjectOfType<GameLoop>().HasLeft = true;
        FindObjectOfType<GameLoop>().OnEscape();
     }
 }

@@ -11,6 +11,12 @@ public class HeartCounter : MonoBehaviour
     public Canvas gameCanvas;
     public Canvas loseCanvas;
 
+    private GameLoop gameLoop;
+
+    private void Awake()
+    {
+        gameLoop = FindObjectOfType<GameLoop>();
+    }
 
     public void LoseLife()
     {
@@ -18,7 +24,10 @@ public class HeartCounter : MonoBehaviour
         lifeImages[lifeCount].enabled = false;
         if (lifeCount == 0)
         {
-            OnYouLose();
+            if (!gameLoop.HasLeft)
+            {
+                OnYouLose(); 
+            }
         }
     }
 
