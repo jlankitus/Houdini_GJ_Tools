@@ -272,15 +272,15 @@ public class MovingSphere : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision collision) {
-		if (collision.gameObject.CompareTag("Enemy"))
-		{
-			heartCounter.LoseLife();
-		}
+		//if (collision.gameObject.CompareTag("Enemy"))
+		//{
+		//	heartCounter.LoseLife();
+		//}
 		EvaluateCollision(collision);
 	}
 
 	void OnCollisionStay (Collision collision) {
-		EvaluateCollision(collision);
+		 EvaluateCollision(collision);
 	}
 
 	void EvaluateCollision (Collision collision) {
