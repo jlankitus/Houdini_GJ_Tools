@@ -46,7 +46,7 @@ public class TurretLevel : MonoBehaviour
 
         // Update all the new Transforms, based on name
         for (int i = 0; i < TransformsToTransfer.Length; i++) { 
-            Transform newTransform = newTurretModel.transform.Find(TransformsToTransfer[i].name);
+            Transform newTransform = (Transform) newTurretModel.transform.Find(TransformsToTransfer[i].name);
 
             newTransform.localPosition = TransformsToTransfer[i].localPosition;
             newTransform.localRotation = TransformsToTransfer[i].localRotation;
