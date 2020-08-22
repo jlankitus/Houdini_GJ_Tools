@@ -289,6 +289,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4923868680889608355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2339875738380523187}
+  m_Layer: 0
+  m_Name: Bullet Hole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2339875738380523187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4923868680889608355}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1958670199114342041}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &6100916479951780099
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6732418287217071131}
   - component: {fileID: 2434323112059204221}
-  - component: {fileID: 5350217043345568613}
+  - component: {fileID: 1721707357929882538}
   m_Layer: 0
   m_Name: Level 1
   m_TagString: Untagged
@@ -425,7 +455,7 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.38, z: 0}
---- !u!114 &5350217043345568613
+--- !u!114 &1721707357929882538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -437,15 +467,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ff86274706e44689c6c63f8c6e21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletHole: {fileID: 0}
-  bulletPrefab: {fileID: 9103684596283500771, guid: 8068a1de14380fd4aa6efeb5cd511ebe,
+  bulletHole: {fileID: 2339875738380523187}
+  bulletPrefab: {fileID: 1254724754748870, guid: 0d91a86742400b948bc5296780cd3db1,
     type: 3}
   barrelRotation: {fileID: 8691256692603957610}
   shootTarget: {fileID: 0}
   strength: 0.5
   rotationOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-  range: 7.5
-  bulletCooldown: 0.25
+  range: 10
+  bulletCooldown: 1
   enemyScanCycle: 1
 --- !u!1 &7282894185232306162
 GameObject:
@@ -638,7 +668,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3, y: -0.013333559, z: 0}
   m_LocalScale: {x: 0.83333325, y: 3.333333, z: 0.8333333}
-  m_Children: []
+  m_Children:
+  - {fileID: 2339875738380523187}
   m_Father: {fileID: 8691256692603957610}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}

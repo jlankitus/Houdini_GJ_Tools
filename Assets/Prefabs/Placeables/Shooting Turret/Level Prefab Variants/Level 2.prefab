@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1721707357929882538, guid: 5ec0a9bbde964784c9fd6e16edb67e40,
+        type: 3}
+      propertyPath: range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721707357929882538, guid: 5ec0a9bbde964784c9fd6e16edb67e40,
+        type: 3}
+      propertyPath: bulletCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1935321093154110731, guid: 5ec0a9bbde964784c9fd6e16edb67e40,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

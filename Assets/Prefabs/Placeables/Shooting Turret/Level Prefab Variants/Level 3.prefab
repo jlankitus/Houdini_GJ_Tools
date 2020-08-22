@@ -17,6 +17,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9293adb7c97bd2d4bb38b5afde1b65eb, type: 2}
+    - target: {fileID: 2313911994634074413, guid: d9f9492bc0e790b47993cd4d79e81d89,
+        type: 3}
+      propertyPath: range
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313911994634074413, guid: d9f9492bc0e790b47993cd4d79e81d89,
+        type: 3}
+      propertyPath: bulletCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3252642696312833932, guid: d9f9492bc0e790b47993cd4d79e81d89,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
