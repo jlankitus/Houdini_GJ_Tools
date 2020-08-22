@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000035569796, g: 0.00002819651, b: 0.000036669455,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -336,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 1434724566}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &385368521
 Transform:
   m_ObjectHideFlags: 19
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeableObjects:
-  - {fileID: 6207519873738378913, guid: d7af59cf4273b514cb2b076a1266a229, type: 3}
+  - {fileID: 3667268238989529750, guid: c83e46bc78decb94785ea0c4e2a2d606, type: 3}
   - {fileID: 7312661906791077466, guid: 0640856e9b272454ab971ff1d641703b, type: 3}
   - {fileID: 6207519873738378913, guid: 59a2379dcfa6a4c4f96d78779a4d1c44, type: 3}
 --- !u!114 &396424155
@@ -1354,7 +1354,7 @@ PrefabInstance:
     - target: {fileID: 6207519873738378913, guid: 59a2379dcfa6a4c4f96d78779a4d1c44,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6732418287217071131, guid: 59a2379dcfa6a4c4f96d78779a4d1c44,
         type: 3}
@@ -1856,6 +1856,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3108790698990025182, guid: c83e46bc78decb94785ea0c4e2a2d606,
+        type: 3}
+      propertyPath: currentLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3667268238989529750, guid: c83e46bc78decb94785ea0c4e2a2d606,
         type: 3}
       propertyPath: m_Name
@@ -1864,7 +1869,7 @@ PrefabInstance:
     - target: {fileID: 3667268238989529750, guid: c83e46bc78decb94785ea0c4e2a2d606,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7578397965344933427, guid: c83e46bc78decb94785ea0c4e2a2d606,
         type: 3}
