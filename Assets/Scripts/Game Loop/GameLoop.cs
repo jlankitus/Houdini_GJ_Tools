@@ -36,6 +36,7 @@ public class GameLoop : MonoBehaviour
     private void Start()
     {
         GetGlitchRef();
+        OnWaveComplete();
         // DontDestroyOnLoad(gameObject);
     }
 
