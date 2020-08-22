@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000035490168, g: 0.00002813481, b: 0.000036701585,
+  m_IndirectSpecularColor: {r: 0.000035583533, g: 0.000028153203, b: 0.000036504145,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -834,6 +834,8 @@ MonoBehaviour:
   PlayerRenderer: {fileID: 34463109}
   immunityMaterial: {fileID: 2100000, guid: c9d1a82fc9bc07645ac45603634e6159, type: 2}
   normalMaterial: {fileID: 2100000, guid: cb8adac28398e4540a97e8befe59928d, type: 2}
+  gameCanvas: {fileID: 1514294503}
+  loseCanvas: {fileID: 1788473930}
 --- !u!114 &396424157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8110569365056575421, guid: 8a8a84b4669e58c4ca2bd822aa4a4e28,
