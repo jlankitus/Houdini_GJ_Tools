@@ -392,13 +392,15 @@ MonoBehaviour:
     by placing turrets, and slay Vorgons to gain Towels, which will give you strength
     to jump off the planet.
 
+    Each turret costs 5 towels
+
 
     WASD to move.
 
-    1, 2, 3 to choose turret type.
+    E
+    to choose / toggle Turret
 
-    Press
-    ''Tab'' to show turret, and Left Click to Place.
+    Left Click to Place.
 
     ''Space'' to jump.'
   m_isRightToLeft: 0
