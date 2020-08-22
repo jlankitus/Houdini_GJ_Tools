@@ -10,6 +10,7 @@ public class TurretLevel : MonoBehaviour
     public GameObject[] TurretModels;
 
     public Transform[] TransformsToTransfer;
+    public int[] TurretCosts;
 
     private void Start()
     {

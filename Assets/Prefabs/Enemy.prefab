@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInputSpace: {fileID: 0}
-  maxSpeed: 10
+  maxSpeed: 3
   maxAcceleration: 10
   maxAirAcceleration: 1
   jumpHeight: 2
