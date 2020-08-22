@@ -400,9 +400,12 @@ MonoBehaviour:
     E
     to choose / toggle Turret
 
+    Q to Upgrade Turret
+
     Left Click to Place.
 
-    ''Space'' to jump.'
+    ''Space''
+    to jump.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3fa25c2494384fe41a05cae0711e1f4e, type: 2}
   m_sharedMaterial: {fileID: -8459475929010294498, guid: 3fa25c2494384fe41a05cae0711e1f4e,
