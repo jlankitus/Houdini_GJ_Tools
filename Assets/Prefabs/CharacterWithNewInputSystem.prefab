@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 8110569365056575421}
   - component: {fileID: 8110569365056575420}
   - component: {fileID: 8110569366161166873}
+  - component: {fileID: 1746631567227163231}
   m_Layer: 0
   m_Name: CharacterWithNewInputSystem
   m_TagString: Untagged
@@ -333,6 +334,7 @@ MonoBehaviour:
   stairsMask:
     serializedVersion: 2
     m_Bits: 1024
+  heartCounter: {fileID: 0}
 --- !u!114 &8110569365056575420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,5 +376,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c762b1b378e6e374abe93a8b7b09a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitCamera: {fileID: 0}
+  godModeCam: {fileID: 0}
+  playerInput: {fileID: 0}
+  world: {fileID: 0}
+  horizontalSpeed: 2
+  verticalSpeed: 2
+--- !u!114 &1746631567227163231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110569365056575411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae3c5d545e6208498d8636e9e9d2a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -45,14 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ff86274706e44689c6c63f8c6e21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletHole: {fileID: 0}
-  bulletPrefab: {fileID: 9103684596283500771, guid: 8068a1de14380fd4aa6efeb5cd511ebe,
+  bulletHole: {fileID: 1832949291540433022}
+  bulletPrefab: {fileID: 1254724754748870, guid: 0d91a86742400b948bc5296780cd3db1,
     type: 3}
   barrelRotation: {fileID: 761836172544068431}
   shootTarget: {fileID: 0}
   strength: 0.5
   rotationOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-  range: 5
+  range: 15
   bulletCooldown: 0.1
   enemyScanCycle: 1
 --- !u!1 &435025069249905084
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 7069020017981114751}
   - component: {fileID: 768962199044441177}
   m_Layer: 0
-  m_Name: Barrel Direction
+  m_Name: BarrelDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
-  m_Children: []
+  m_Children:
+  - {fileID: 1832949291540433022}
   m_Father: {fileID: 761836172544068431}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -330,6 +331,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3206467051609809239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832949291540433022}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832949291540433022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206467051609809239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.399, z: 0.604}
+  m_LocalScale: {x: 0.17044, y: 0.17044, z: 0.17044}
+  m_Children: []
+  m_Father: {fileID: 1871132030649181333}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6935532266104796291
 GameObject:
   m_ObjectHideFlags: 0

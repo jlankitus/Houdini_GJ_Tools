@@ -13,6 +13,9 @@ public class PlayerHP: MonoBehaviour
 
     private float lastDamaged;
 
+    public GameObject gameCanvas;
+    public GameObject loseCanvas;
+
     private void OnCollisionStay(Collision collision)
     {
         StartCoroutine(ApplyDamage(collision));
@@ -68,6 +71,8 @@ public class PlayerHP: MonoBehaviour
     {
         Debug.LogError("U DED");
         GetComponent<Collider>().enabled = false;
+        gameCanvas.SetActive(false);
+        loseCanvas.SetActive(true);
     }
 
     private void Start()

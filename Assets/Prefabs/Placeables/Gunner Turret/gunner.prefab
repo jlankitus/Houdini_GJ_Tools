@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3206467051609809239
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1832949291540433022}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1832949291540433022
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206467051609809239}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.399, z: 0.604}
-  m_LocalScale: {x: 0.17044, y: 0.17044, z: 0.17044}
-  m_Children: []
-  m_Father: {fileID: 5621410152151893758}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7312661906791077466
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,8 +49,8 @@ MonoBehaviour:
   maxLevel: 3
   TurretModels:
   - {fileID: 135988937793311958, guid: 72fe2895165e56a40809c153ff86a6bc, type: 3}
-  - {fileID: 3171250579734328064, guid: 488e6a6957c46d0479887db0d5bb1ce8, type: 3}
-  - {fileID: 380686848791299339, guid: 90f9cc198f6046e4c8155afa463c5975, type: 3}
+  - {fileID: 6422004576810077989, guid: 47f10f3f7a9fd8c429f0a6fa9be5f414, type: 3}
+  - {fileID: 2181069751436472543, guid: e78a55ff905849f46894e2c968aeaee4, type: 3}
   TransformsToTransfer:
   - {fileID: 6730154527664810276}
 --- !u!135 &2928684186937843073
@@ -107,16 +77,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135988937793311958, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435025069249905084, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 768129386371993196, guid: 72fe2895165e56a40809c153ff86a6bc,
         type: 3}
@@ -173,42 +133,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 879573956171618066, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107636251615609275, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063114937010206796, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: range
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063114937010206796, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 1254724754748870, guid: 0d91a86742400b948bc5296780cd3db1,
-        type: 3}
-    - target: {fileID: 4063114937010206796, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: bulletHole
-      value: 
-      objectReference: {fileID: 1832949291540433022}
-    - target: {fileID: 6935532266104796291, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8966362120022060047, guid: 72fe2895165e56a40809c153ff86a6bc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fe2895165e56a40809c153ff86a6bc, type: 3}
 --- !u!4 &6727299838868139015 stripped
@@ -220,12 +144,6 @@ Transform:
 --- !u!4 &6730154527664810276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 761836172544068431, guid: 72fe2895165e56a40809c153ff86a6bc,
-    type: 3}
-  m_PrefabInstance: {fileID: 6337930359236911723}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5621410152151893758 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1871132030649181333, guid: 72fe2895165e56a40809c153ff86a6bc,
     type: 3}
   m_PrefabInstance: {fileID: 6337930359236911723}
   m_PrefabAsset: {fileID: 0}
