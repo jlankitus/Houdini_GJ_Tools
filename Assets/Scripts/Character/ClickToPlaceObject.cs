@@ -82,7 +82,8 @@ public class ClickToPlaceObject : MonoBehaviour
         
         objectGhostToPlace = Instantiate(currentObjectToGenerate);
         objectGhostToPlace.GetComponent<Collider>().enabled = false;
-        
+        objectGhostToPlace.GetComponentInChildren<ShootingTurret>().enabled = false;
+
         // Rotate it based on Mouse Scroll
         RotateFromMouseWheel();
 
@@ -99,6 +100,8 @@ public class ClickToPlaceObject : MonoBehaviour
             {
                 // Place the turret and enable the Collider
                 objectGhostToPlace.GetComponent<Collider>().enabled = true;
+                // Enable the shooting
+                objectGhostToPlace.GetComponentInChildren<ShootingTurret>().enabled = true;
                 // Remove the reference, so we don't move it again
                 objectGhostToPlace = null;
             }
