@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        spawnRange = Random.insideUnitSphere * 50f;
+        spawnRange = Random.insideUnitSphere * 100f;
         Instantiate(enemyPrefab, spawnRange, Quaternion.identity);
     }
 }
