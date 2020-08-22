@@ -444,8 +444,9 @@ MonoBehaviour:
   shootTarget: {fileID: 0}
   strength: 0.5
   rotationOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-  range: 5
-  rate: 0.1
+  range: 7.5
+  bulletCooldown: 0.25
+  enemyScanCycle: 1
 --- !u!1 &7282894185232306162
 GameObject:
   m_ObjectHideFlags: 0
