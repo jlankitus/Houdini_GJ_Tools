@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000035490168, g: 0.00002813481, b: 0.000036701585,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -778,6 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 1434724566}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &385368521
 Transform:
   m_ObjectHideFlags: 19
@@ -1180,7 +1182,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.001
+  m_Intensity: 0.025
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -1225,7 +1227,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 3411
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 8.979349e-35, z: 1.16e-43, w: 9e-44}
+  m_BoundingSphereOverride: {x: 1.03e-42, y: 1.551e-42, z: 0, w: -0.00000016238812}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1263,7 +1265,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 0.001
+  m_Intensity: 0.025
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -3551,7 +3553,7 @@ PrefabInstance:
     - target: {fileID: 3384593218035050544, guid: 6f098d86846665540a99e7272afe5375,
         type: 3}
       propertyPath: m_Radius
-      value: 1.02
+      value: 1.025
       objectReference: {fileID: 0}
     - target: {fileID: 3384593218035050544, guid: 6f098d86846665540a99e7272afe5375,
         type: 3}
