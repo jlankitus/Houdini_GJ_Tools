@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 6732418287217071131}
   - component: {fileID: 2434323112059204221}
   - component: {fileID: 7013600132941657846}
+  - component: {fileID: 3082466712346977379}
   m_Layer: 0
   m_Name: Shield_Tower_v1_BulletTest
   m_TagString: Untagged
@@ -446,6 +447,29 @@ MonoBehaviour:
   rotationOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   range: 5
   bulletCooldown: 0.5
+  enemyScanCycle: 1
+--- !u!114 &3082466712346977379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207519873738378913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4af8b881ea792b4db146d8fc17d317d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 1
+  maxLevel: 3
+  TurretModels:
+  - {fileID: 135988937793311958, guid: 72fe2895165e56a40809c153ff86a6bc, type: 3}
+  - {fileID: 6422004576810077989, guid: 47f10f3f7a9fd8c429f0a6fa9be5f414, type: 3}
+  - {fileID: 2181069751436472543, guid: e78a55ff905849f46894e2c968aeaee4, type: 3}
+  TransformsToTransfer:
+  - {fileID: 0}
+  TurretCosts: 050000000500000005000000
+  gameLoop: {fileID: 0}
 --- !u!1 &7282894185232306162
 GameObject:
   m_ObjectHideFlags: 0

@@ -81,6 +81,7 @@ public class ClickToPlaceObject : MonoBehaviour
         if (objectGhostToPlace != null)
         {
             Destroy(objectGhostToPlace);
+            OnChangeObject();
             return;
         }
         
@@ -119,6 +120,17 @@ public class ClickToPlaceObject : MonoBehaviour
     
 
     // Switch Selected Object to Place
+    private int objectIndex = 0;
+    public void OnChangeObject()
+    {
+        if (objectIndex < placeableObjects.Length - 1)
+        {
+            objectIndex++;
+        }
+        else objectIndex = 0;
+
+        currentObjectToGenerate = placeableObjects[objectIndex];
+    }
     public void OnChangeToObject1() { currentObjectToGenerate = placeableObjects[0]; }
     public void OnChangeToObject2() { currentObjectToGenerate = placeableObjects[1]; }
     public void OnChangeToObject3() { currentObjectToGenerate = placeableObjects[2]; }

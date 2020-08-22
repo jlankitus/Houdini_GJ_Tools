@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 5528321942916390320, guid: 0608edb63f8c91f46aa30616a84d88de, type: 3}
   TransformsToTransfer:
   - {fileID: 6372887872721767709}
-  TurretCosts: 050000000a00000000000000
+  TurretCosts: 050000000500000005000000
   gameLoop: {fileID: 0}
 --- !u!136 &3108790698990025180
 CapsuleCollider:

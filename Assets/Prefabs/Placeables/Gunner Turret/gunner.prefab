@@ -53,6 +53,8 @@ MonoBehaviour:
   - {fileID: 2181069751436472543, guid: e78a55ff905849f46894e2c968aeaee4, type: 3}
   TransformsToTransfer:
   - {fileID: 6730154527664810276}
+  TurretCosts: 050000000500000005000000
+  gameLoop: {fileID: 0}
 --- !u!135 &2928684186937843073
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -183,17 +183,6 @@
                 },
                 {
                     "name": "",
-                    "id": "cab93bb4-2614-495f-a1a1-f3552fa22af4",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CreateNewTurret",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1fa7a2c7-1065-4560-b5c0-7d16f1f57e69",
                     "path": "<Keyboard>/e",
                     "interactions": "",
