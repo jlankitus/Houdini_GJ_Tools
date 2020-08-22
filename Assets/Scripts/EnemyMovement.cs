@@ -93,21 +93,8 @@ public class EnemyMovement : MonoBehaviour {
     
 	void Update () {
 		
-		var directionToPlayer = playerTransform.position - transform.position;
-		Debug.DrawRay(transform.position, directionToPlayer.normalized);
-        
-		if (playerInputSpace) {
-			rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
-			forwardAxis =
-				ProjectDirectionOnPlane(playerInputSpace.forward, upAxis);
-		}
-		else {
-			rightAxis = ProjectDirectionOnPlane(Vector3.right, upAxis);
-			forwardAxis = ProjectDirectionOnPlane(Vector3.forward, upAxis);
-		}
 		
-		// desiredVelocity =  new Vector3(directionToPlayer.x, directionToPlayer.y, directionToPlayer.y) * maxSpeed;
-		transform.position += directionToPlayer * enemySpeed * Time.deltaTime;
+        // transform.gameObject.GetComponent<Rigidbody>().velocity += (directionToPlayer * enemySpeed * Time.deltaTime);
 		StandUpStraight();
 
         // Handled on OnJump
@@ -137,6 +124,25 @@ public class EnemyMovement : MonoBehaviour {
 		{
 			needsStraightened = true;
 		}
+
+
+        var directionToPlayer = playerTransform.position - transform.position;
+        Debug.DrawRay(transform.position, directionToPlayer.normalized);
+
+        if (playerInputSpace)
+        {
+            rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
+            forwardAxis =
+                ProjectDirectionOnPlane(playerInputSpace.forward, upAxis);
+        }
+        else
+        {
+            rightAxis = ProjectDirectionOnPlane(Vector3.right, upAxis);
+            forwardAxis = ProjectDirectionOnPlane(Vector3.forward, upAxis);
+        }
+
+        // desiredVelocity =  new Vector3(directionToPlayer.x, directionToPlayer.y, directionToPlayer.y) * maxSpeed;
+        transform.position += (directionToPlayer * enemySpeed * Time.deltaTime);
 
         // playerInput = new Vector2();
     }

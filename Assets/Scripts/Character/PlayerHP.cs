@@ -16,6 +16,8 @@ public class PlayerHP: MonoBehaviour
     public GameObject gameCanvas;
     public GameObject loseCanvas;
 
+    public GameObject HitParticle;
+
     private void OnCollisionStay(Collision collision)
     {
         StartCoroutine(ApplyDamage(collision));
@@ -47,6 +49,11 @@ public class PlayerHP: MonoBehaviour
             Health--;
             heartDrawManager.HeartCount = Health;
             heartDrawManager.UpdateHearts();
+
+            var particleGO = Instantiate(HitParticle, transform);
+            particleGO.GetComponent<ParticleSystem>().Play();
+            
+
 
             // Die if needed
             if (Health <= 0)
