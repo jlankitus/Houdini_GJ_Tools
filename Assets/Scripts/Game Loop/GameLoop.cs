@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class GameLoop : Singleton<GameLoop>
+public class GameLoop : MonoBehaviour
 {
     [SerializeField]
     private int towels;
@@ -29,10 +29,12 @@ public class GameLoop : Singleton<GameLoop>
     public OrbitCamera orbitCamera;
     public Transform characterTransform;
     public MovingSphere characterMovement;
+    public GameObject escapeCanvas;
 
     private void Start()
     {
         GetGlitchRef();
+        // DontDestroyOnLoad(gameObject);
     }
 
     private void UpdateTowelUI()
@@ -62,7 +64,7 @@ public class GameLoop : Singleton<GameLoop>
     {
        foreach (var component in volumeProfile.components)
         {
-            if (component.displayName == "glitch")
+            if (component.displayName == "Glitch")
             {
                 glitch = component;
             }
@@ -85,5 +87,11 @@ public class GameLoop : Singleton<GameLoop>
     {
         yield return new WaitForSeconds(glitchLength);
         glitch.active = false;
+    }
+
+    public void OnEscape()
+    {
+        escapeCanvas.SetActive(true);
+        if(glitch != null) glitch.active = true;
     }
 }
