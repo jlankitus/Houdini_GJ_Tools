@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000035569796, g: 0.00002819651, b: 0.000036669455,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -392,6 +393,8 @@ MonoBehaviour:
   normalMaterial: {fileID: 2100000, guid: cb8adac28398e4540a97e8befe59928d, type: 2}
   gameCanvas: {fileID: 1514294503}
   loseCanvas: {fileID: 1788473930}
+  HitParticle: {fileID: 1690548281334034, guid: 1e03a462bc9faca4fbadc6881678b945,
+    type: 3}
 --- !u!114 &396424157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8110569365056575421, guid: 8a8a84b4669e58c4ca2bd822aa4a4e28,
@@ -1549,6 +1552,7 @@ MonoBehaviour:
   orbitCamera: {fileID: 1822895526}
   characterTransform: {fileID: 1181697448}
   characterMovement: {fileID: 396424157}
+  escapeCanvas: {fileID: 0}
 --- !u!4 &1393915971
 Transform:
   m_ObjectHideFlags: 0
@@ -2757,7 +2761,7 @@ PrefabInstance:
     - target: {fileID: 5437581660601077805, guid: 6f098d86846665540a99e7272afe5375,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f098d86846665540a99e7272afe5375, type: 3}
