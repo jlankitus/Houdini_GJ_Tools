@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000035498084, g: 0.000028115717, b: 0.000036501817,
+  m_IndirectSpecularColor: {r: 0.000035583533, g: 0.000028153203, b: 0.000036504145,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -371,7 +371,7 @@ MonoBehaviour:
   placeableObjects:
   - {fileID: 3667268238989529750, guid: c83e46bc78decb94785ea0c4e2a2d606, type: 3}
   - {fileID: 7312661906791077466, guid: 0640856e9b272454ab971ff1d641703b, type: 3}
-  - {fileID: 6207519873738378913, guid: 59a2379dcfa6a4c4f96d78779a4d1c44, type: 3}
+  - {fileID: 213404231192325679, guid: 98c486f2f65415c4facdf1e259612d9b, type: 3}
 --- !u!114 &396424155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,10 +719,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 947521714}
     m_Modifications:
+    - target: {fileID: 3537983432130306790, guid: 86f1beed295e7d645a5021aa377eb1c2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3537983432424057384, guid: 86f1beed295e7d645a5021aa377eb1c2,
         type: 3}
       propertyPath: m_Name
       value: ShieldShaderTester
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537983432424057384, guid: 86f1beed295e7d645a5021aa377eb1c2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3537983432424057385, guid: 86f1beed295e7d645a5021aa377eb1c2,
         type: 3}
@@ -2599,6 +2609,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Planet_3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490728605314129748, guid: bba028e367cde0d49b3c4bb0abd22cfb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956917328437669519, guid: bba028e367cde0d49b3c4bb0abd22cfb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bba028e367cde0d49b3c4bb0abd22cfb, type: 3}
